@@ -14,6 +14,17 @@ body {
     background-color:  var(--background-color);
     color: var(--text-color);
     font-family: "Lucida Console", "Verdana", sans-serif;
+    
+    /* Remove scrollbar */
+    
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Remove scrollbar */
+
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 /* Title */
@@ -35,8 +46,8 @@ body {
     -webkit-justify-content: center;
     justify-content: center;
     height: 100vh; 
-    width: 100vw;
-    overflow: hidden;
+    width: auto;
+    border: 1px solid;
 }
 
 #welcome-section > h1 {
@@ -99,6 +110,15 @@ body {
 }
 
 /* Main */
+
+#projects {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid;
+}
 
 /* Media */
 

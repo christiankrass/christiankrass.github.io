@@ -52,15 +52,15 @@ html, body {
 }
 
 #scroll-animation.scroll-sector-1 {
-    animation: fade 5s 1s linear infinite;
+    animation: fade 5s 1s ease infinite;
 }
 
 #scroll-animation.scroll-sector-2 {
-    animation: fade 5s 2s linear infinite;
+    animation: fade 5s 2s ease infinite;
 }
 
 #scroll-animation.scroll-sector-3 {
-    animation: fade 5s 3s linear infinite;
+    animation: fade 5s 3s ease infinite;
 }
 
 #welcome-section > h1 {
@@ -73,6 +73,9 @@ html, body {
     }
     50% {
         opacity: 100%;    
+    }
+    85% {
+        opacity: 0%;
     }
     100% {
         opacity: 0%;

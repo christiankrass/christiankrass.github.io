@@ -209,10 +209,10 @@ footer > p {
     font-size: 18px;   
 }
 
-footer > .sozial-media {
-    margin: 25px;
-    font-size:24px;
-    color:white
+footer > .social-media {
+    margin-left: 15px;
+    font-size: 24px;
+    color: var(--text-color);
 }
 
 /* Media */

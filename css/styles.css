@@ -285,14 +285,19 @@ footer {
 footer > p {
     font-size: 18px;
     text-align: center;
+    color: var(--text-color);
 }
 
-footer > .social-media {
+#social-media {
     display: block;
     font-size: 45px;
     color: var(--text-color);
     --fa-animation-duration: 4s;
     --fa-animation-timing: ease-out;
+}
+
+#social-media > i {
+    margin: 0 10px;
 }
 
 /* Media */

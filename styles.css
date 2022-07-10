@@ -210,9 +210,12 @@ footer > p {
 }
 
 footer > .social-media {
+    display: block;
     margin-left: 15px;
     font-size: 24px;
     color: var(--text-color);
+    --fa-animation-duration: 2s; 
+    --fa-animation-timing: ease-out;
 }
 
 /* Media */

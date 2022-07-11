@@ -376,6 +376,13 @@ footer > p {
     color: var(--text-color);
 }
 
+footer > a {
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 #social-media {
     display: block;
     font-size: 45px;

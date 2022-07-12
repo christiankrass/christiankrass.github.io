@@ -53,7 +53,8 @@ hr {
 }
 
 .language > a > img {
-    width: 3vw;
+    max-width: 100%;
+    width: 45px;
 }
 
 .language > a {
@@ -433,12 +434,6 @@ footer > a {
 @media(max-height:600px) {
     #animation {
         display: none;
-    }
-}
-
-@media(max-height:400px) {
-    .language > a > h2 {
-        font-size: 15px;
     }
 }
 

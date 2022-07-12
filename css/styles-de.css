@@ -101,7 +101,7 @@ hr {
 /* Headlines */
 
 h1 {
-    font-size: 22vw;
+    font-size: 16vw;
     z-index: 1;
 }
 
@@ -265,6 +265,7 @@ h1 {
 
 #main > .cv-container > .cv * > li{
     list-style-position: inside;
+    margin: 1.5px;
 }
 
 

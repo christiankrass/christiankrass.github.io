@@ -52,8 +52,8 @@ hr {
     z-index: 2;
 }
 
-.language > h2 {
-    margin: 5px 0 0 0;
+.language > a > img {
+    width: 3vw;
 }
 
 .language > a {
@@ -257,14 +257,24 @@ h1 {
     width: 37vw;
 }
 
-#main > .cv-container > .cv > .placer > p{
+#main > .cv-container > .cv > .placer > p {
     display: inline;
     position: relative;
     float: right;
 }
 
-#main > .cv-container > .cv * > li{
+#main > .cv-container > .cv * > li {
     list-style-position: inside;
+}
+
+#main > .cv-container > .cv > h3,
+h4 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#main > .cv-container > .cv > hr {
+    margin: 15px -15px;
 }
 
 

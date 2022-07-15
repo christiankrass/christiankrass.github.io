@@ -55,6 +55,7 @@ hr {
 .language > a > img {
     max-width: 100%;
     width: 45px;
+    height: 45px;
 }
 
 .language > a {
@@ -309,7 +310,7 @@ h4 {
     align-content: center;
 }
 
-#main > .certifications > img {
+#main > .certifications > a,img {
     width: 400px;
     height: 500px;
     object-fit: cover;
@@ -319,7 +320,7 @@ h4 {
     border-radius: 5%;
 }
 
-#main > .certifications > img:hover {
+#main > .certifications > a,img:hover {
     transform: scale(1.025);
     cursor: pointer;
 }

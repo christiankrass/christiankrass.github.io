@@ -55,21 +55,20 @@ hr {
 .language > a > img {
     max-width: 100%;
     width: 45px;
-    height: 45px;
+    height: 35px;
+}
+
+.language > a > img:hover {
+    transform: scale(1.15);
+}
+
+.language > a > .active {
+    border: 2px solid white;
 }
 
 .language > a {
     text-decoration: none;
 }
-
-.language > a:visited {
-    color: var(--text-color);
-}
-
-.language > a:active {
-    color: white;
-}
-
 
 /* Welcome Title */
 
@@ -98,6 +97,23 @@ hr {
     justify-content: center;
     height: 100vh;
     width: auto;
+    cursor: default;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+}
+
+#welcome-section > img {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    border-radius: 0;
+    border-top-right-radius: 150px;
+}
+
+#welcome-section > img:hover {
+    transform: scale(1);
+    cursor: auto;
 }
 
 /* Headlines */
@@ -188,6 +204,7 @@ h1 {
     padding: 0;
     width: auto;
     height: auto;
+
 }
 
 

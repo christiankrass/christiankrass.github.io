@@ -104,11 +104,13 @@ hr {
 }
 
 #welcome-section > img {
+    margin: 0;
+    padding: 0;
     position: absolute;
     height: 100vh;
     width: 100vw;
     border-radius: 0;
-    border-top-right-radius: 150px;
+    border-top-right-radius: 350px;
 }
 
 #welcome-section > img:hover {

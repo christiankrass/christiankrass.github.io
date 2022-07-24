@@ -392,7 +392,7 @@ img:hover {
 }
 
 #main > .download-area > a:active{
-    background: rgb(58, 27, 27);
+    transform: scale(0.975);
 
 }
 

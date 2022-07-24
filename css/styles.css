@@ -34,6 +34,61 @@ body::-webkit-scrollbar {
     /* Safari and Chrome */
 }
 
+/* Flex Container */
+
+.flex-container-row {
+    display: -webkit-box;
+    /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+    display: -moz-box;
+    /* OLD: Firefox (buggy) */
+    display: -ms-flexbox;
+    /* MID: IE 10 */
+    display: -webkit-flex;
+    /* NEW, Chrome 21–28, Safari 6.1+ */
+    display: flex;
+    /* NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+ */
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    align-content: center;
+
+    flex-direction: row;
+    flex-flow: wrap;
+    grid-gap: 15px;
+}
+
+.flex-container-column {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    flex-direction: column;
+    grid-gap: 12px;
+}
+
 /* Breakers */
 
 hr {
@@ -70,61 +125,6 @@ hr {
     text-decoration: none;
 }
 
-/* Flex Container */
-
-.flex-container-row {
-    display: -webkit-box;
-    /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
-    display: -moz-box;
-    /* OLD: Firefox (buggy) */
-    display: -ms-flexbox;
-    /* MID: IE 10 */
-    display: -webkit-flex;
-    /* NEW, Chrome 21–28, Safari 6.1+ */
-    display: flex;
-    /* NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+ */
-
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    align-content: center;
-    
-    flex-direction: row;
-    flex-flow: wrap;
-    grid-gap: 15px;
-}
-
-.flex-container-column {  
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center; 
-    -webkit-justify-content: center;
-    justify-content: center;
-    
-    flex-direction: column;
-    grid-gap: 12px;
-}
-
 /* Welcome Title */
 
 #welcome-section {
@@ -137,9 +137,9 @@ hr {
 }
 
 #welcome-section > img {
+    position: absolute;
     margin: 0;
     padding: 0;
-    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
@@ -214,19 +214,19 @@ h1 {
 
 
 #scroll-animation.scroll-sector-1 {
-    animation: fade 5s 1s ease infinite;
+    animation: fade-transform 5s 1s ease infinite;
 }
 
 #scroll-animation.scroll-sector-2 {
-    animation: fade 5s 2s ease infinite;
+    animation: fade-transform 5s 2s ease infinite;
 }
 
 #scroll-animation.scroll-sector-3 {
-    animation: fade 5s 3s ease infinite;
+    animation: fade-transform 5s 3s ease infinite;
 }
 
 
-@keyframes fade {
+@keyframes fade-transform {
     0% {
         opacity: 0%;
         -webkit-transform: translateY(-25px);
@@ -321,7 +321,6 @@ h4 {
 #main > .cv-container > .cv > hr {
     margin: 15px -15px;
 }
-
 
 /* Certifications and Qualifications */
 /* Certifications */

@@ -366,6 +366,36 @@ img:hover {
     cursor: pointer;
 }
 
+/* Download Area */
+
+#main > .download-area {
+    max-width: 80vw;
+    margin: 25px auto;
+}
+
+#main > .download-area > a{
+    max-width: 80vw;
+    width: 100%;
+    height: auto;
+    font-family: "Lucida Console", "Verdana", sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    border: 2.5px solid var(--text-color);
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#main > .download-area > a:hover{
+    cursor: pointer;
+    transform: scale(1.025);
+}
+
+#main > .download-area > a:active{
+    background: rgb(58, 27, 27);
+
+}
+
 /* Footer */
 
 footer {

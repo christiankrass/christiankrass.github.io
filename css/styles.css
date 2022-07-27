@@ -283,7 +283,8 @@ h1 {
 
 #main > .projects-container > img:hover {
     transform: scale(1.025);
-    cursor: pointer;
+    cursor: auto;
+    transition-duration: 0.5s;
 }
 
 /* CV */
@@ -343,6 +344,7 @@ img {
 img:hover {
     transform: scale(1.025);
     cursor: pointer;
+    transition-duration: 0.5s;
 }
 
 /* Qualifications */
@@ -363,7 +365,8 @@ img:hover {
 
 #main > .qualifications > img:hover {
     transform: scale(1.025);
-    cursor: pointer;
+    cursor: auto;
+    transition-duration: 0.5s;
 }
 
 /* Download Area */
@@ -373,7 +376,7 @@ img:hover {
     margin: 25px auto;
 }
 
-#main > .download-area > a{
+#main > .download-area > a {
     max-width: 80vw;
     width: 100%;
     height: auto;
@@ -386,14 +389,15 @@ img:hover {
     text-decoration: none;
 }
 
-#main > .download-area > a:hover{
+#main > .download-area > a:hover {
     cursor: pointer;
     transform: scale(1.025);
+    transition-duration: 0.5s;
 }
 
-#main > .download-area > a:active{
+#main > .download-area > a:active {
     transform: scale(0.975);
-
+    transition-duration: 0.5s;
 }
 
 /* Footer */

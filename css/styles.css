@@ -97,6 +97,20 @@ hr {
     margin: 25px auto;
 }
 
+/* Hover */
+/* With Pointer */
+.hover-pointer:hover {
+    transform: scale(1.025);
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+/* Without Pointer */
+.hover:hover {
+    transform: scale(1.025);
+    transition-duration: 0.5s;
+}
+
 /* Language */
 
 .language {
@@ -111,10 +125,6 @@ hr {
     max-width: 100%;
     width: 45px;
     height: 35px;
-}
-
-.language > a > img:hover {
-    transform: scale(1.15);
 }
 
 .language > a > .active {
@@ -158,11 +168,6 @@ hr {
     height: 35vh;
     background: linear-gradient(transparent,
             var(--background-color));
-}
-
-#welcome-section > img:hover {
-    transform: scale(1);
-    cursor: auto;
 }
 
 /* Headlines */
@@ -281,12 +286,6 @@ h1 {
     border-radius: 5%;
 }
 
-#main > .projects-container > img:hover {
-    transform: scale(1.025);
-    cursor: auto;
-    transition-duration: 0.5s;
-}
-
 /* CV */
 
 #main > .cv-container {
@@ -340,13 +339,6 @@ img {
     border-radius: 5%;
 }
 
-#main > .certifications > a,
-img:hover {
-    transform: scale(1.025);
-    cursor: pointer;
-    transition-duration: 0.5s;
-}
-
 /* Qualifications */
 
 #main > .qualifications {
@@ -361,12 +353,6 @@ img:hover {
     max-width: 100%;
     max-height: 100%;
     border-radius: 5%;
-}
-
-#main > .qualifications > img:hover {
-    transform: scale(1.025);
-    cursor: auto;
-    transition-duration: 0.5s;
 }
 
 /* Download Area */
@@ -387,12 +373,6 @@ img:hover {
     font-size: 25px;
     text-align: center;
     text-decoration: none;
-}
-
-#main > .download-area > a:hover {
-    cursor: pointer;
-    transform: scale(1.025);
-    transition-duration: 0.5s;
 }
 
 #main > .download-area > a:active {

@@ -127,10 +127,6 @@ hr {
     height: 35px;
 }
 
-.language > a > .active {
-    border: 2px solid white;
-}
-
 .language > a {
     text-decoration: none;
 }

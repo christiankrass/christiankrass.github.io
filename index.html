@@ -6,23 +6,25 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="icon" href="media/img/portfolio.png" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/index.js" ></script>
     <script src="https://kit.fontawesome.com/4b42c4c9d0.js" crossorigin="anonymous"></script>
     <title>Portfolio</title>
 </head>
 
 <body>
     <div class="language">
-        <a href="index.html">
-            <img class="active hover-pointer" src="media/img/united-kingdom.png" />
+        <a onclick="setLanguage('eng');">
+            <img class="active-eng hover-pointer" src="media/img/united-kingdom.png"/>
         </a>
-        <a href="index-de.html">
-            <img class="hover-pointer" src="media/img/germany.png" />
+        <a onclick="setLanguage('deu');">
+            <img class="active-deu hover-pointer" src="media/img/germany.png" />
         </a>
     </div>
     <header id="welcome-section" class="flex-container-row">
         <div class="trans"></div>
-        <img src="media/img/background1.jpg" />
-        <h1>Welcome</h1>
+        <img class="background-img"/>
+        <h1 class="welcome-title"></h1>
     </header>
     <section id="animation">
         <div id="scroll-animation" class="scroll-sector-1"></div>

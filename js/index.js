@@ -21,7 +21,7 @@ $(document).ready(function () {
         $(".download-title").text("Download Area");
         $(".information-title").text("For more information please click here:");
         $(".download-cq").html("<i class='fa-solid fa-download'></i> Certifications and Qualifications");
-        $(".download-cv").html("<i class='fa-solid fa-download'></i> Curriculum Vitae (Needs to be done)");
+        $(".download-cv").html("<i class='fa-solid fa-download'></i> Curriculum Vitae (WIP)");
 
         //Introduction
         $(".introtext").html(`
@@ -42,14 +42,14 @@ $(document).ready(function () {
                 </div>
                 <div class="placer">E-Mail: <p>christiankrass@web.de</p>
                 </div>
-                <div class="placer">Birth: <p>19.03.1993</p>
+                <div class="placer">Birthdate: <p>19.03.1993</p>
                 </div>
-                <div class="placer">Citizenship: <p>german</p>
+                <div class="placer">Citizenship: <p>German</p>
                 </div>
                 <br>
                 <h3>Web Developmnet Experience</h3>
                 <hr>
-                <h4>since August 2022</h4>
+                <h4>Since August 2022</h4>
                 <p>freeCodeCamp</p>
                 <p>Front End Development Libraries</p>
                 <hr>
@@ -63,21 +63,13 @@ $(document).ready(function () {
                 <p>Responsive Web Design</p>
                 <p>Graduation: Certificat</p>
                 <hr>
-                <h4>October 2016-2017</h4>
-                <p>SAP project seminar PROBAS</p>
-                <ul>
-                    <li>ERP 6.0 + NetWeaver 7.0</li>
-                </ul>
-                <p>Graduation: Certificat</p>
-                <hr>
+                
                 <h4>June 2014 - July 2014</h4>
                 <p>Intership Highschool Münster</p>
                 <p>Electrical engineering and computer science</p>
                 <ul>
-                    <li>Connect four with WebRTC</li>
+                    <li>Connect four using WebRTC</li>
                 </ul>
-                <br>
-                <h3>Special accomplishments</h3>
                 <hr>
                 <h4>April 2017 - July 2017</h4>
                 <p>Software project TU Ilmenau</p>
@@ -93,8 +85,25 @@ $(document).ready(function () {
                 <p>School project for an application</p>
                 <p>Graduation: Certificate</p>
                 <br>
+                <h3>Work expreience</h3>
+                <hr>
+                <h4>Since August 2019</h4>
+                <p>Part time job JYSK SE</p>
+                <ul>
+                    <li>Consulting and sales</li>
+                </ul>
+                <br>
         `);
         $(".cv-place2").html(`
+                <h3>Special accomplishments</h3>
+                <hr>
+                <h4>October 2016-2017</h4>
+                <p>SAP project seminar PROBAS</p>
+                <ul>
+                    <li>ERP 6.0 + NetWeaver 7.0</li>
+                </ul>
+                <p>Graduation: Certificat</p>
+                <hr>
                 <h3>Knowledge</h3>
                 <hr>
                 <h4>Languages</h4>
@@ -102,7 +111,7 @@ $(document).ready(function () {
                 <ul>
                     <li>German: native</li>
                     <li>English: fluent</li>
-                    <li>Russisch: basic</li>
+                    <li>Russian: basic</li>
                 </ul>
                 <br>
                 <h4>Information Technology</h4>
@@ -138,14 +147,6 @@ $(document).ready(function () {
                 <p>Mathematics and comupter sience</p>
                 <p>Graduation: A-Level</p>
                 <hr>
-                <h3>Work expreience</h3>
-                <hr>
-                <h4>Since August 2019</h4>
-                <p>Part time job JYSK SE</p>
-                <ul>
-                    <li>Consulting and sales</li>
-                </ul>
-                <br>
                 <h3>Hobbys</h3>
                 <hr>
                 <ul>
@@ -167,10 +168,10 @@ $(document).ready(function () {
         $(".project-title").text("Projekte");
         $(".cv-title").text("Lebenslauf");
         $(".c-and-q-title").text("Zertifikate und Qualifikationen");
-        $(".download-title").text("Download Area");
+        $(".download-title").text("Download Bereich");
         $(".information-title").text("Für mehr Informationen, bitte hier klicken:");
         $(".download-cq").html("<i class='fa-solid fa-download'></i> Zertifikate und Qualifikationen");
-        $(".download-cv").html("<i class='fa-solid fa-download'></i> Curriculum Vitae (Needs to be done)");
+        $(".download-cv").html("<i class='fa-solid fa-download'></i> Lebenslauf (WIP)");
 
         //Introduction
         $(".introtext").html(`

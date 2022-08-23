@@ -19,7 +19,7 @@ $(document).ready(function () {
         $(".cv-title").text("Curriculum Vitae");
         $(".c-and-q-title").text("Certifications and Qualifications");
         $(".download-title").text("Download Area");
-        $(".download-title").text("For more information please click here:");
+        $(".information-title").text("For more information please click here:");
         $(".download-cq").html("<i class='fa-solid fa-download'></i> Certifications and Qualifications");
         $(".download-cv").html("<i class='fa-solid fa-download'></i> Curriculum Vitae (Needs to be done)");
 
@@ -168,7 +168,7 @@ $(document).ready(function () {
         $(".cv-title").text("Lebenslauf");
         $(".c-and-q-title").text("Zertifikate und Qualifikationen");
         $(".download-title").text("Download Area");
-        $(".download-title").text("Für mehr Informationen, bitte hier klicken:");
+        $(".information-title").text("Für mehr Informationen, bitte hier klicken:");
         $(".download-cq").html("<i class='fa-solid fa-download'></i> Zertifikate und Qualifikationen");
         $(".download-cv").html("<i class='fa-solid fa-download'></i> Curriculum Vitae (Needs to be done)");
 

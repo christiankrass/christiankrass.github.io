@@ -1,8 +1,21 @@
+let clickCount = 0;
+
 function setLanguage(value) {
 
     //set session languge and reload website
-    sessionStorage.setItem("language", value);
+sessionStorage.setItem("language", value);
     location.reload();
+}
+
+function setFocus() {
+    let id = "#"+event.srcElement.id;
+    if (clickCount == 0) {
+    $(id).css({"width":"100%","height":"100%","max-width":"100%","max-height":"100%"});
+        clickCount = 1;
+    } else {
+    $(id).css({"width": "initial", "height" : "500px", "max-width" : "100%", "max-height" : "100%"});
+        clickCount = 0;
+    }
 }
 
 $(document).ready(function () {
@@ -52,6 +65,7 @@ $(document).ready(function () {
                 <h4>Since August 2022</h4>
                 <p>freeCodeCamp</p>
                 <p>Front End Development Libraries</p>
+                <p>Bootstrap, jQuery, React</p>
                 <hr>
                 <h4>July 2022 - August 2022</h4>
                 <p>freeCodeCamp</p>
@@ -62,14 +76,6 @@ $(document).ready(function () {
                 <p>freeCodeCamp</p>
                 <p>Responsive Web Design</p>
                 <p>Graduation: Certificat</p>
-                <hr>
-                
-                <h4>June 2014 - July 2014</h4>
-                <p>Intership Highschool Münster</p>
-                <p>Electrical engineering and computer science</p>
-                <ul>
-                    <li>Connect four using WebRTC</li>
-                </ul>
                 <hr>
                 <h4>April 2017 - July 2017</h4>
                 <p>Software project TU Ilmenau</p>
@@ -84,6 +90,13 @@ $(document).ready(function () {
                 <h4>June 2015 - July 2015</h4>
                 <p>School project for an application</p>
                 <p>Graduation: Certificate</p>
+                <hr>
+                <h4>June 2014 - July 2014</h4>
+                <p>Intership Highschool Münster</p>
+                <p>Electrical engineering and computer science</p>
+                <ul>
+                    <li>Connect four using WebRTC</li>
+                </ul>
                 <br>
                 <h3>Work expreience</h3>
                 <hr>
@@ -103,7 +116,7 @@ $(document).ready(function () {
                     <li>ERP 6.0 + NetWeaver 7.0</li>
                 </ul>
                 <p>Graduation: Certificat</p>
-                <hr>
+                <br>
                 <h3>Knowledge</h3>
                 <hr>
                 <h4>Languages</h4>
@@ -122,11 +135,35 @@ $(document).ready(function () {
                     <li>Database systems</li>
                     <li>Git</li>
                     <br>
-                    <ul>
-                        <p>Programming skills:</p>
-                        <li>Java</li>
-                        <li>JavaScript</li>
+                    <p>Programming skills:</p>
+                    <ul class="cv-inner-list">
+                        <div class="eval-container">
+<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+                        <li>Java</li><div class="eval-container">
+<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+                        <li>JavaScript</li><div class="eval-container">
+<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
                         <li>C#</li>
+                        <br>
+                        <p>Front-End Frameworks:</p>
+                        <ul class="cv-inner-list">
+ <div class="eval-container">
+<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+                            <li>React</li>
+ <div class="eval-container">
+<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+                            <li>jQuery</li>
+ <div class="eval-container">
+<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+                            <li>Bootstrap</li>
+                        </ul>
+                        <br>
+                        <p>Back-End:</p>
+                        <ul class="cv-inner-list">
+ <div class="eval-container">
+<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+                            <li>SQL</li>
+                        </ul>
                     </ul>
                 </ul>
                 <br>
@@ -146,7 +183,7 @@ $(document).ready(function () {
                 <p>Hermann-Emanuel-Berufskolleg des Kreises Steinfurt</p>
                 <p>Mathematics and comupter sience</p>
                 <p>Graduation: A-Level</p>
-                <hr>
+                <br>
                 <h3>Hobbys</h3>
                 <hr>
                 <ul>
@@ -214,13 +251,13 @@ $(document).ready(function () {
                 <p>Abschluss: Zertifikat</p>
                 <hr>
                 <h4>October 2016-2017</h4>
-                <p>SAP project seminar PROBAS</p>
+                <p>SAP projekt seminar PROBAS</p>
                 <ul>
                     <li>ERP 6.0 + NetWeaver 7.0</li>
                 </ul>
                 <p>Abschluss: Zertifikat</p>
                 <hr>
-                <h4>June 2014 - July 2014</h4>
+                <h4>Juni 2014 - Juli 2014</h4>
                 <p>Intership Highschool Münster</p>
                 <p>Electrical engineering and computer science</p>
                 <ul>

@@ -1,5 +1,9 @@
 let isInFocus = false;
-
+let language = navigator.language || navigator.userLanguage;
+if (sessionStorage.getItem("language") == null){
+    sessionStorage.setItem("language", language.split("-")[0]);
+}
+    
 function setLanguage(value) {
 
     //set session languge and reload website
@@ -9,7 +13,7 @@ sessionStorage.setItem("language", value);
 
 function setFocus() {
     let id = "#"+event.srcElement.id;
-    console.log($(id).css("height"));
+    console.log(language.split("-")[0]);
     if ($(id).css("height") == "500px" && isInFocus == false) {
     $(id).css({"width":"90vw","height":"90vh","max-width":"100%","max-height":"100%"});
     $(id).addClass("focus");

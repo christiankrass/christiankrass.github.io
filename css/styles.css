@@ -86,7 +86,7 @@ body::-webkit-scrollbar {
     justify-content: center;
 
     flex-direction: column;
-    grid-gap: 12px;
+    grid-gap: 15px;
 }
 
 /* Breakers */
@@ -109,6 +109,19 @@ hr {
 .hover:hover {
     transform: scale(1.025);
     transition-duration: 0.5s;
+}
+
+/* Focus */
+.focus {
+    position: fixed;
+    margin: auto;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    border: 5px solid black;
 }
 
 /* Language */

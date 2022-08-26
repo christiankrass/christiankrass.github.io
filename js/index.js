@@ -1,4 +1,4 @@
-let clickCount = 0;
+let isInFocus = false;
 
 function setLanguage(value) {
 
@@ -9,12 +9,15 @@ sessionStorage.setItem("language", value);
 
 function setFocus() {
     let id = "#"+event.srcElement.id;
-    if (clickCount == 0) {
-    $(id).css({"width":"100%","height":"100%","max-width":"100%","max-height":"100%"});
-        clickCount = 1;
-    } else {
-    $(id).css({"width": "initial", "height" : "500px", "max-width" : "100%", "max-height" : "100%"});
-        clickCount = 0;
+    console.log($(id).css("height"));
+    if ($(id).css("height") == "500px" && isInFocus == false) {
+    $(id).css({"width":"90vw","height":"90vh","max-width":"100%","max-height":"100%"});
+    $(id).addClass("focus");
+    isInFocus = true;
+    } else if ($(id).css("height") != "500px") {
+    $(id).css({"transition-duration":"0.5s", "width": "initial", "height" : "500px", "max-width" : "100%", "max-height" : "100%"});
+    $(id).removeClass("focus");
+    isInFocus = false;
     }
 }
 

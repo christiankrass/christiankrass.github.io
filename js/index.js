@@ -1,24 +1,30 @@
 let isInFocus = false;
 let language = navigator.language || navigator.userLanguage;
+//set session Language to the browser language
 if (sessionStorage.getItem("language") == null){
     sessionStorage.setItem("language", language.split("-")[0]);
 }
     
 function setLanguage(value) {
 
-    //set session languge and reload website
+    //set user selected session languge and reload website
 sessionStorage.setItem("language", value);
     location.reload();
 }
 
+//set Focus on a single Img, clicked by the user
 function setFocus() {
     let id = "#"+event.srcElement.id;
-    console.log(language.split("-")[0]);
+    //to prevent stacking of multiple imgs
     if ($(id).css("height") == "500px" && isInFocus == false) {
-    $(id).css({"width":"90vw","height":"90vh","max-width":"100%","max-height":"100%"});
+    //prevent user scrolling in focus state
+    $("html").css("overflow","hidden");
+   $(id).css({"width":"90vw","height":"90vh","max-width":"100%","max-height":"100%","overflow":"auto"});
     $(id).addClass("focus");
     isInFocus = true;
     } else if ($(id).css("height") != "500px") {
+    //unlock scrolling once focuse state has been closed
+    $("html").css("overflow","initial");
     $(id).css({"transition-duration":"0.5s", "width": "initial", "height" : "500px", "max-width" : "100%", "max-height" : "100%"});
     $(id).removeClass("focus");
     isInFocus = false;

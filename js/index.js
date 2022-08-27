@@ -19,7 +19,7 @@ function setFocus() {
     if ($(id).css("height") == "500px" && isInFocus == false) {
     //prevent user scrolling in focus state
     $("html").css("overflow","hidden");
-   $(id).css({"width":"90vw","height":"90vh","max-width":"100%","max-height":"100%","overflow":"auto"});
+   $(id).css({"height":"95vh","max-width":"100%","max-height":"100%"});
     $(id).addClass("focus");
     isInFocus = true;
     } else if ($(id).css("height") != "500px") {

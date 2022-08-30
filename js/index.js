@@ -2,7 +2,8 @@ let isInFocus = false;
 let language = navigator.language || navigator.userLanguage;
 //set session Language to the browser language
 if (sessionStorage.getItem("language") == null){
-    sessionStorage.setItem("language", language.split("-")[0]);
+    //sessionStorage.setItem("language", language.split("-")[0]);
+    sessionStorage.setItem("language", "en");
 }
     
 function setLanguage(value) {
@@ -47,7 +48,7 @@ $(document).ready(function () {
         $(".download-title").text("Download Area");
         $(".information-title").text("For more information please click here:");
         $(".download-cq").html("<i class='fa-solid fa-download'></i> Certifications and Qualifications");
-        $(".download-cv").html("<i class='fa-solid fa-download'></i> Curriculum Vitae (WIP)");
+        $(".download-cv").html("<i class='fa-solid fa-download'></i> Curriculum Vitae");
 
         //Introduction
         $(".introtext").html(`

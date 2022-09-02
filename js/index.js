@@ -20,7 +20,7 @@ function setFocus() {
     if ($(id).css("height") == "500px" && isInFocus == false) {
     //prevent user scrolling in focus state
     $("html").css("overflow","hidden");
-   $(id).css({"height":"95vh","max-width":"100%","max-height":"100%"});
+   $(id).css({"height":"90vh","max-width":"100%","max-height":"100%"});
     $(id).addClass("focus");
     isInFocus = true;
     } else if ($(id).css("height") != "500px") {
@@ -112,7 +112,7 @@ $(document).ready(function () {
                     <li>Connect four using WebRTC</li>
                 </ul>
                 <br>
-                <h3>Work expreience</h3>
+                <h3>Work experience</h3>
                 <hr>
                 <h4>Since August 2019</h4>
                 <p>Part time job JYSK SE</p>
@@ -144,25 +144,24 @@ $(document).ready(function () {
                 <h4>Information Technology</h4>
                 <hr>
                 <ul>
-                    <li>Microsoft Office</li>
-                    <li>Video editing</li>
+                    <li>Premiere Pro</li>
                     <li>Database systems</li>
-                    <li>Git</li>
+                    <li>Github</li>
                     <br>
                     <p>Programming skills:</p>
                     <ul class="cv-inner-list">
                         <div class="eval-container">
 <div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
                         <li>Java</li><div class="eval-container">
-<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+<div class="eveluation eval-current"></div><div class="eveluation"></div><div class="eveluation"></div></div>
                         <li>JavaScript</li><div class="eval-container">
-<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+<div class="eveluation"></div><div class="eveluation"></div><div class="eveluation eval-current"></div></div>
                         <li>C#</li>
                         <br>
                         <p>Front-End Frameworks:</p>
                         <ul class="cv-inner-list">
  <div class="eval-container">
-<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+<div class="eveluation"></div><div class="eveluation"></div><div class="eveluation eval-current"></div></div>
                             <li>React</li>
  <div class="eval-container">
 <div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
@@ -175,7 +174,7 @@ $(document).ready(function () {
                         <p>Back-End:</p>
                         <ul class="cv-inner-list">
  <div class="eval-container">
-<div class="eveluation"></div><div class="eveluation eval-current"></div><div class="eveluation"></div></div>
+<div class="eveluation"></div><div class="eveluation"></div><div class="eveluation eval-current"></div></div>
                             <li>SQL</li>
                         </ul>
                     </ul>
@@ -201,9 +200,9 @@ $(document).ready(function () {
                 <h3>Hobbys</h3>
                 <hr>
                 <ul>
+                    <li>Mountain biking</li>
                     <li>Volleyball</li>
                     <li>Cooking</li>
-                    <li>Coding</li>
                 </ul>
         `);
         //content in german

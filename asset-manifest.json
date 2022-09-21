@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.ad6d1451.css",
+    "main.js": "/react-gh-pages/static/js/main.f3455b53.js",
+    "static/js/787.28cb0dcd.chunk.js": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js",
+    "static/media/C&Q.pdf": "/react-gh-pages/static/media/C&Q.200e49f6eb0af0d9cb09.pdf",
+    "static/media/background1.jpg": "/react-gh-pages/static/media/background1.cdd883053f1620dcca00.jpg",
+    "static/media/background2.jpg": "/react-gh-pages/static/media/background2.7659109d053b5c7d38ee.jpg",
+    "static/media/Tribute-Page.png": "/react-gh-pages/static/media/Tribute-Page.362afacae41e6425c6f1.png",
+    "static/media/Praktikum.jpeg": "/react-gh-pages/static/media/Praktikum.b29929eb15c323a34bc4.jpeg",
+    "static/media/Softwarepro1.jpeg": "/react-gh-pages/static/media/Softwarepro1.4241abaeac2ade0ace4c.jpeg",
+    "static/media/SAP.jpeg": "/react-gh-pages/static/media/SAP.6c7b989c003d36c4860b.jpeg",
+    "static/media/Softwarepro2.jpeg": "/react-gh-pages/static/media/Softwarepro2.c23f9b0beea5135c326b.jpeg",
+    "static/media/Tech-Doc-Page.png": "/react-gh-pages/static/media/Tech-Doc-Page.c548a942673d2300f26e.png",
+    "static/media/JavaScript-Algorithms-and-Data-Structures.png": "/react-gh-pages/static/media/JavaScript-Algorithms-and-Data-Structures.1f1364ee4304da02b264.png",
+    "static/media/MarkdownPreviewer.png": "/react-gh-pages/static/media/MarkdownPreviewer.1e68c311395fcda1e78a.png",
+    "static/media/Front-End-Development-Libraries.png": "/react-gh-pages/static/media/Front-End-Development-Libraries.5b08f10d3d0714a5ff30.png",
+    "static/media/CV.pdf": "/react-gh-pages/static/media/CV.0fe1ccfbc0366fb33b6a.pdf",
+    "static/media/Responsive-Design.png": "/react-gh-pages/static/media/Responsive-Design.9be813429b4988b6ba7d.png",
+    "static/media/SoftwareproIMG1.png": "/react-gh-pages/static/media/SoftwareproIMG1.79ce1266f679c81435e8.png",
+    "static/media/QuoteMachine.png": "/react-gh-pages/static/media/QuoteMachine.0f48b060f8a860735093.png",
+    "static/media/25+5Clock.png": "/react-gh-pages/static/media/25+5Clock.fb24bada900391c6c0cc.png",
+    "static/media/Calculator.png": "/react-gh-pages/static/media/Calculator.5aa19946ac70cbfb638f.png",
+    "static/media/DrumMachine.png": "/react-gh-pages/static/media/DrumMachine.7e708d7b5fd64bfa7347.png",
+    "index.html": "/react-gh-pages/index.html",
+    "main.ad6d1451.css.map": "/react-gh-pages/static/css/main.ad6d1451.css.map",
+    "main.f3455b53.js.map": "/react-gh-pages/static/js/main.f3455b53.js.map",
+    "787.28cb0dcd.chunk.js.map": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad6d1451.css",
+    "static/js/main.f3455b53.js"
+  ]
+}

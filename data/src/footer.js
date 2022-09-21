@@ -15,7 +15,7 @@ class Footer extends React.Component {
           <p className="information-title"></p>
           <div id="social-media">
             <a
-              href="https://www.xing.com/profile/Christian_Krass/cv"
+              href="https://www.linkedin.com/in/christian-krass-765422251/"
               target="_blank"
               rel="noreferrer"
             >

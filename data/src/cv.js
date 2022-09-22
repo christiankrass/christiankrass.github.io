@@ -12,7 +12,7 @@ function CircularProgressWithLabel(props) {
         variant="determinate"
         value={props.value}
       />
-      {nameLength < 4 && (
+      {nameLength < 4 ? (
         <Box
           sx={{
             top: 1,
@@ -33,12 +33,11 @@ function CircularProgressWithLabel(props) {
             {props.name}
           </Typography>
         </Box>
-      )}
-      {nameLength >= 4 && (
+      ) : (
         <Box
           sx={{
             left: 0,
-            bottom: -25,
+            bottom: -35,
             right: 0,
             position: "absolute",
             display: "flex",
@@ -72,11 +71,11 @@ const CV = () => {
     <CircularProgressWithLabel value={20} name={"Redux"} />,
     <CircularProgressWithLabel value={20} name={"MUI"} />,
   ];
-  const backEnd = [<CircularProgressWithLabel value={20} name={"SQL"} />];
   const otherSkills = [
     <CircularProgressWithLabel value={80} name={"HTML"} />,
     <CircularProgressWithLabel value={70} name={"CSS"} />,
     <CircularProgressWithLabel value={60} name={"SASS"} />,
+    <CircularProgressWithLabel value={20} name={"SQL"} />,
   ];
 
   if (sessionStorage.getItem("language") === "de") {
@@ -187,55 +186,48 @@ const CV = () => {
             <h4>Informations Technologie</h4>
             <hr />
             <p>Programmier Sprachen:</p>
-            {programSkill.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ display: "inline", marginLeft: "15px" }}
-                >
-                  {data}
-                </div>
-              );
-            })}
-            <br />
+            <div className="skillContainer">
+              {programSkill.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{ display: "inline", marginLeft: "15px" }}
+                  >
+                    {data}
+                  </div>
+                );
+              })}
+            </div>
             <br />
             <br />
             <p>JavaScript Frontend Framework Libraries:</p>
-            {frontEndLibrary.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ display: "inline", marginLeft: "15px" }}
-                >
-                  {data}
-                </div>
-              );
-            })}
+            <div className="skillContainer">
+              {frontEndLibrary.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{ display: "inline", marginLeft: "15px" }}
+                  >
+                    {data}
+                  </div>
+                );
+              })}
+            </div>
             <br />
             <br />
-            <br />
-            <p>Backend:</p>
-            {backEnd.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ display: "inline", marginLeft: "15px" }}
-                >
-                  {data}
-                </div>
-              );
-            })}
             <p>Andere Skills:</p>
-            {otherSkills.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ display: "inline", marginLeft: "15px" }}
-                >
-                  {data}
-                </div>
-              );
-            })}
+            <div className="skillContainer">
+              {otherSkills.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{ display: "inline", marginLeft: "15px" }}
+                  >
+                    {data}
+                  </div>
+                );
+              })}
+            </div>
             <br />
             <br />
             <p>Andere Software:</p>
@@ -379,55 +371,48 @@ const CV = () => {
             <h4>Information Technology</h4>
             <hr />
             <p>Programming skills:</p>
-            {programSkill.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ display: "inline", marginLeft: "15px" }}
-                >
-                  {data}
-                </div>
-              );
-            })}
-            <br />
+            <div className="skillContainer">
+              {programSkill.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{ display: "inline", marginLeft: "15px" }}
+                  >
+                    {data}
+                  </div>
+                );
+              })}
+            </div>
             <br />
             <br />
             <p>JavaScript Frontend Framework Libraries:</p>
-            {frontEndLibrary.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ display: "inline", marginLeft: "15px" }}
-                >
-                  {data}
-                </div>
-              );
-            })}
+            <div className="skillContainer">
+              {frontEndLibrary.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{ display: "inline", marginLeft: "15px" }}
+                  >
+                    {data}
+                  </div>
+                );
+              })}
+            </div>
             <br />
             <br />
-            <br />
-            <p>Backend:</p>
-            {backEnd.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ display: "inline", marginLeft: "15px" }}
-                >
-                  {data}
-                </div>
-              );
-            })}
             <p>Other Skills:</p>
-            {otherSkills.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ display: "inline", marginLeft: "15px" }}
-                >
-                  {data}
-                </div>
-              );
-            })}
+            <div className="skillContainer">
+              {otherSkills.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{ display: "inline", marginLeft: "15px" }}
+                  >
+                    {data}
+                  </div>
+                );
+              })}
+            </div>
             <br />
             <br />
             <p>Other Software:</p>

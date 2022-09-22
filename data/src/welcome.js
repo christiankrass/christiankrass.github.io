@@ -22,15 +22,7 @@ class Welcome extends React.Component {
   }
 
   componentDidMount() {
-    if (sessionStorage.getItem("language") === "en") {
-      this.setState({
-        welcomeHeadline: "Welcome",
-      });
-      $(".welcome-title").css({ fontSize: "" });
-      $(".active-eng").css({ border: "2px solid white" });
-      $(".active-deu").css({ border: "" });
-      $(".background-img").attr({ src: background1 });
-    } else if (sessionStorage.getItem("language") === "de") {
+    if (sessionStorage.getItem("language") === "de") {
       this.setState({
         welcomeHeadline: "Willkommen",
       });
@@ -38,6 +30,14 @@ class Welcome extends React.Component {
       $(".active-deu").css({ border: "2px solid white" });
       $(".active-eng").css({ border: "" });
       $(".background-img").attr({ src: background2 });
+    } else {
+      this.setState({
+        welcomeHeadline: "Welcome",
+      });
+      $(".welcome-title").css({ fontSize: "" });
+      $(".active-eng").css({ border: "2px solid white" });
+      $(".active-deu").css({ border: "" });
+      $(".background-img").attr({ src: background1 });
     }
 
     var background = document.getElementsByClassName("background-img");
@@ -45,6 +45,7 @@ class Welcome extends React.Component {
       overflow: true,
       delay: 1,
       maxTransition: 65,
+      customWrapper: ".backgroundcontainer",
     });
 
     var tranparentLayer = document.getElementsByClassName("trans");
@@ -52,6 +53,7 @@ class Welcome extends React.Component {
       overflow: true,
       delay: 1,
       maxTransition: 65,
+      customWrapper: ".backgroundcontainer",
     });
   }
 
@@ -88,7 +90,10 @@ class Welcome extends React.Component {
             <img className="active-deu hover-pointer" src={gerflg} alt="DE" />
           </button>
         </div>
-        <header id="welcome-section" className="flex-container-row">
+        <header
+          id="welcome-section"
+          className="backgroundcontainer flex-container-row"
+        >
           <div className="trans"></div>
           <img className="background-img" alt="BackgroundImg" />
           <h1 className="welcome-title">{this.state.welcomeHeadline}</h1>

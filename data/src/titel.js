@@ -8,8 +8,8 @@ let gerLangUpdate = false;
 let engLangUpdate = false;
 
 let preventDoubleTimer = false;
-let index = 0;
-let comb = "";
+let processDelay = 0;
+let realTimeTextOutput = "";
 let timerLength = 0;
 let timerIndex = 0;
 // Input Settings
@@ -90,14 +90,14 @@ class Titel extends React.Component {
   }
 
   timer() {
-    index = 0;
+    processDelay = 0;
     timerLength = this.state.text[timerIndex].length;
     setTimeout(() => {
       this.timer();
       for (let i of this.state.text[timerIndex]) {
         this.timeOutOutput(i);
       }
-      index += pauseBetweenWriteAndDelete + timerLength * 2;
+      processDelay += pauseBetweenWriteAndDelete + timerLength * 2;
       // eslint-disable-next-line no-unused-vars
       for (let i of this.state.text[timerIndex]) {
         this.timeOutPop();
@@ -123,19 +123,19 @@ class Titel extends React.Component {
   }
 
   timeOutOutput(value) {
-    index += 1;
+    processDelay += 1;
     setTimeout(() => {
-      comb += value;
-      $(".dynamic-title").text(comb);
-    }, index * writeSpeed);
+      realTimeTextOutput += value;
+      $(".dynamic-title").text(realTimeTextOutput);
+    }, processDelay * writeSpeed);
   }
 
   timeOutPop() {
-    index += 1;
+    processDelay += 1;
     setTimeout(() => {
-      comb = comb.slice(0, -1);
-      $(".dynamic-title").text(comb);
-    }, index * deleteSpeed);
+      realTimeTextOutput = realTimeTextOutput.slice(0, -1);
+      $(".dynamic-title").text(realTimeTextOutput);
+    }, processDelay * deleteSpeed);
   }
 
   reset() {

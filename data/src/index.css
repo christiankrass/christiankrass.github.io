@@ -161,7 +161,7 @@ hr {
   width: 100vw;
   height: 100vh;
   max-width: 100vw;
-  bottom: 35px;
+  bottom: 15px;
   height: 35vh;
   background: linear-gradient(transparent, var(--background-color));
   z-index: -1;

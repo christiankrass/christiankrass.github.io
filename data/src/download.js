@@ -5,8 +5,8 @@ import $ from "jquery";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import cv from "./media/documents/C&Q.pdf";
-import qq from "./media/documents/CV.pdf";
+import qq from "./media/documents/C&Q.pdf";
+import cv from "./media/documents/CV.pdf";
 
 let preventDouble = false;
 

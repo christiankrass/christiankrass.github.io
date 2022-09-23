@@ -303,6 +303,7 @@ h1 {
   overflow-x: hidden;
   margin: auto;
   max-width: 80vw;
+  height: auto;
 }
 #carousel * > .car-img {
   display: block;

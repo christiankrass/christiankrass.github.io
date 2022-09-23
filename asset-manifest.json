@@ -1,34 +1,34 @@
 {
   "files": {
     "main.css": "/react-gh-pages/static/css/main.4b098374.css",
-    "main.js": "/react-gh-pages/static/js/main.3e9c0556.js",
+    "main.js": "/react-gh-pages/static/js/main.083987d9.js",
     "static/js/787.28cb0dcd.chunk.js": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js",
     "static/media/C&Q.pdf": "/react-gh-pages/static/media/C&Q.200e49f6eb0af0d9cb09.pdf",
     "static/media/background1.jpg": "/react-gh-pages/static/media/background1.cdd883053f1620dcca00.jpg",
+    "static/media/MarkdownPreviewer.png": "/react-gh-pages/static/media/MarkdownPreviewer.b6abdb5a3b7cb7b09f28.png",
     "static/media/background2.jpg": "/react-gh-pages/static/media/background2.7659109d053b5c7d38ee.jpg",
     "static/media/Tribute-Page.png": "/react-gh-pages/static/media/Tribute-Page.362afacae41e6425c6f1.png",
     "static/media/Praktikum.jpeg": "/react-gh-pages/static/media/Praktikum.b29929eb15c323a34bc4.jpeg",
+    "static/media/25+5Clock.png": "/react-gh-pages/static/media/25+5Clock.31dfb1a29b5d5f9956b3.png",
     "static/media/Softwarepro1.jpeg": "/react-gh-pages/static/media/Softwarepro1.4241abaeac2ade0ace4c.jpeg",
+    "static/media/QuoteMachine.png": "/react-gh-pages/static/media/QuoteMachine.008915a6438d6cf11df8.png",
     "static/media/SAP.jpeg": "/react-gh-pages/static/media/SAP.6c7b989c003d36c4860b.jpeg",
     "static/media/Softwarepro2.jpeg": "/react-gh-pages/static/media/Softwarepro2.c23f9b0beea5135c326b.jpeg",
+    "static/media/Calculator.png": "/react-gh-pages/static/media/Calculator.a0c049c30e4335bba1b7.png",
+    "static/media/DrumMachine.png": "/react-gh-pages/static/media/DrumMachine.074a527c00e133a0d016.png",
     "static/media/Tech-Doc-Page.png": "/react-gh-pages/static/media/Tech-Doc-Page.c548a942673d2300f26e.png",
     "static/media/JavaScript-Algorithms-and-Data-Structures.png": "/react-gh-pages/static/media/JavaScript-Algorithms-and-Data-Structures.1f1364ee4304da02b264.png",
-    "static/media/MarkdownPreviewer.png": "/react-gh-pages/static/media/MarkdownPreviewer.ad439fca67694ef07e2b.png",
     "static/media/Front-End-Development-Libraries.png": "/react-gh-pages/static/media/Front-End-Development-Libraries.5b08f10d3d0714a5ff30.png",
     "static/media/CV.pdf": "/react-gh-pages/static/media/CV.0fe1ccfbc0366fb33b6a.pdf",
     "static/media/Responsive-Design.png": "/react-gh-pages/static/media/Responsive-Design.9be813429b4988b6ba7d.png",
     "static/media/SoftwareproIMG1.png": "/react-gh-pages/static/media/SoftwareproIMG1.ca0172350d98c6163a9f.png",
-    "static/media/25+5Clock.png": "/react-gh-pages/static/media/25+5Clock.6b816aa7163e4b933b44.png",
-    "static/media/QuoteMachine.png": "/react-gh-pages/static/media/QuoteMachine.263e7a5010e0cbb31a08.png",
-    "static/media/Calculator.png": "/react-gh-pages/static/media/Calculator.e108cb8c3dc91bb16e5d.png",
-    "static/media/DrumMachine.png": "/react-gh-pages/static/media/DrumMachine.f1b9c3f4160e2e2a850c.png",
     "index.html": "/react-gh-pages/index.html",
     "main.4b098374.css.map": "/react-gh-pages/static/css/main.4b098374.css.map",
-    "main.3e9c0556.js.map": "/react-gh-pages/static/js/main.3e9c0556.js.map",
+    "main.083987d9.js.map": "/react-gh-pages/static/js/main.083987d9.js.map",
     "787.28cb0dcd.chunk.js.map": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4b098374.css",
-    "static/js/main.3e9c0556.js"
+    "static/js/main.083987d9.js"
   ]
 }

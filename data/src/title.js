@@ -21,14 +21,28 @@ let gerText = [
   "Hallo.",
   "Mein Name ist Christian Krass.",
   "Ich bin ein ambitionierter Webentwickler.",
+  "Als Hauptkomponente dieses Portfolios wurde React verwendet.",
+  "Stilistisch wurden Material UI, Bootstrap, simpleParallax & Font Awesome angewendet.",
+  "Zur einfacheren und direkten Manipulation von HTML-Texten wurde jQuery eingesetzt.",
+  "Als Stylesheet wurde hier SASS gewählt.",
+  "Wenn ich Ihr Interesse geweckt habe, können Sie mich gerne kontaktieren.",
+  "Die E-Mail-Adresse und die Rufnummer finden Sie im Lebenslauf unter Persönliche Informationen.",
+  "Vielen Dank, dass Sie sich die Zeit genommen haben, die Website zu besuchen, und ich wünsche Ihnen einen schönen Tag.",
 ];
 let engText = [
   "Hello.",
   "My name is Christian Krass.",
-  "I am a passionate web developer.",
+  "I am an ambitious web developer.",
+  "React was used as the main component of this portfolio.",
+  "Stylistically Material UI, Bootstrap, simpleParallax & Font Awesome were applied.",
+  "For easier and direct manipulation of HTML texts jQuery was utilized.",
+  "SASS was selected as the stylesheet here.",
+  "If I could catch your interest, feel free to contact me.",
+  "You can find the email address and number in the resume under Personal Information.",
+  "Thank you for taking the time to visit and have a great day.",
 ];
 
-class Titel extends React.Component {
+class Title extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -168,4 +182,4 @@ class Titel extends React.Component {
   }
 }
 
-export default Titel;
+export default Title;

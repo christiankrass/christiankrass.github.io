@@ -6,7 +6,7 @@ import background2 from "./media/img/background2.jpg";
 import ukflag from "./media/img/united-kingdom.png";
 import gerflg from "./media/img/germany.png";
 import Projects from "./projects";
-import Title from "./titel";
+import Title from "./title";
 import CV from "./cv";
 import CaQ from "./certAndQual";
 import DownloadArea from "./download";

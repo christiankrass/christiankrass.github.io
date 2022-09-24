@@ -1,7 +1,7 @@
-/* eslint-disable jsx-a11y/heading-has-content */
 import CircularProgress from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import React from "react";
 
 const programSkill = [
   <CircularProgressWithLabel value={75} name={"JavaScript"} />,
@@ -12,7 +12,7 @@ const frontEndLibrary = [
   <CircularProgressWithLabel value={75} name={"jQuery"} />,
   <CircularProgressWithLabel value={70} name={"React"} />,
   <CircularProgressWithLabel value={70} name={"Bootstrap"} />,
-  <CircularProgressWithLabel value={20} name={"Redux"} />,
+  <CircularProgressWithLabel value={40} name={"Redux"} />,
   <CircularProgressWithLabel value={20} name={"MUI"} />,
 ];
 const otherSkills = [
@@ -430,13 +430,16 @@ const German = () => {
   );
 };
 
-const CV = () => {
-  if (sessionStorage.getItem("language") === "de") {
-    return <German />;
-  } else {
-    //English Version
-    return <English />;
+class CV extends React.Component {
+  render() {
+    if (this.props.language === "de") {
+      // German Verison
+      return <German />;
+    } else {
+      // English Verison
+      return <English />;
+    }
   }
-};
+}
 
 export default CV;

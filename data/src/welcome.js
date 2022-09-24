@@ -5,12 +5,6 @@ import background1 from "./media/img/background1.jpg";
 import background2 from "./media/img/background2.jpg";
 import ukflag from "./media/img/united-kingdom.png";
 import gerflg from "./media/img/germany.png";
-import Projects from "./projects";
-import Title from "./title";
-import CV from "./cv";
-import CaQ from "./certAndQual";
-import DownloadArea from "./download";
-import Footer from "./footer";
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -22,7 +16,7 @@ class Welcome extends React.Component {
   }
 
   componentDidMount() {
-    if (sessionStorage.getItem("language") === "de") {
+    if (this.props.language === "de") {
       this.setState({
         welcomeHeadline: "Willkommen",
       });
@@ -59,6 +53,7 @@ class Welcome extends React.Component {
 
   setLanguage(event) {
     if (event.currentTarget.className.split(" ")[0] === "uk-button") {
+      this.props.setLang("en");
       sessionStorage.setItem("language", "en");
       this.setState({
         welcomeHeadline: "Welcome",
@@ -68,6 +63,7 @@ class Welcome extends React.Component {
       $(".active-deu").css({ border: "" });
       $(".background-img").attr({ src: background1 });
     } else if (event.currentTarget.className.split(" ")[0] === "ger-button") {
+      this.props.setLang("de");
       sessionStorage.setItem("language", "de");
       this.setState({
         welcomeHeadline: "Willkommen",
@@ -103,20 +99,6 @@ class Welcome extends React.Component {
           <div id="scroll-animation" className="scroll-sector-2"></div>
           <div id="scroll-animation" className="scroll-sector-3"></div>
         </section>
-
-        <main id="main">
-          <Title />
-          <hr></hr>
-          <Projects />
-          <hr></hr>
-          <CV />
-          <hr></hr>
-          <CaQ />
-          <hr></hr>
-          <DownloadArea />
-          <hr></hr>
-          <Footer />
-        </main>
       </>
     );
   }

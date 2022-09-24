@@ -52,10 +52,7 @@ class Title extends React.Component {
   }
 
   componentDidMount() {
-    if (
-      sessionStorage.getItem("language") === "de" &&
-      preventDoubleTimer === false
-    ) {
+    if (this.props.language === "de" && preventDoubleTimer === false) {
       preventDoubleTimer = true;
       this.setState(
         {
@@ -65,10 +62,7 @@ class Title extends React.Component {
           this.timer();
         }
       );
-    } else if (
-      sessionStorage.getItem("language") !== "de" &&
-      preventDoubleTimer === false
-    ) {
+    } else if (this.props.language !== "de" && preventDoubleTimer === false) {
       preventDoubleTimer = true;
       this.setState(
         {
@@ -82,7 +76,7 @@ class Title extends React.Component {
   }
 
   componentDidUpdate() {
-    if (sessionStorage.getItem("language") !== "de") {
+    if (this.props.language !== "de") {
       $(".introduction-title").text("Introduction");
       if (!gerLangUpdate) {
         gerLangUpdate = true;
@@ -91,7 +85,7 @@ class Title extends React.Component {
           text: engText,
         });
       }
-    } else if (sessionStorage.getItem("language") === "de") {
+    } else if (this.props.language === "de") {
       $(".introduction-title").text("Einleitung");
       if (!engLangUpdate) {
         engLangUpdate = true;

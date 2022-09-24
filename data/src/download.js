@@ -1,61 +1,62 @@
-/* eslint-disable jsx-a11y/heading-has-content */
-/* eslint-disable jsx-a11y/anchor-has-content */
-import { useEffect } from "react";
-import $ from "jquery";
+import React from "react";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import qq from "./media/documents/C&Q.pdf";
+import qc from "./media/documents/C&Q.pdf";
 import cv from "./media/documents/CV.pdf";
 
-let preventDouble = false;
+class DownloadArea extends React.Component {
+  headLineCreator(headlineText) {
+    return (
+      <h2 data-aos="slide-right" className="download-title">
+        {headlineText}
+      </h2>
+    );
+  }
 
-const DownloadArea = () => {
-  useEffect(() => {
-    if (
-      sessionStorage.getItem("language") !== "de" &&
-      preventDouble === false
-    ) {
-      preventDouble = true;
-      $(".download-title").text("Download area");
-      $(".download-cv").append("Curriculum Vitae");
-      $(".download-qq").append("Qualifikations and Certifications");
-    } else if (
-      sessionStorage.getItem("language") === "de" &&
-      preventDouble === false
-    ) {
-      preventDouble = true;
-      $(".download-title").text("Download Bereich");
-      $(".download-cv").append("Lebenslauf");
-      $(".download-qq").append("Qualifikationen und Zertifikate");
+  downloadButtonCreator(href, description) {
+    return (
+      <Button
+        data-aos="fade"
+        variant="dark"
+        className={"download-" + href}
+        href={href}
+        download
+      >
+        <FontAwesomeIcon className="fa-fw" icon={faDownload} />
+        {description}
+      </Button>
+    );
+  }
+  render() {
+    let downloadTitle = "";
+    let downloadCV = "";
+    let downloadQC = "";
+    if (this.props.language === "de") {
+      downloadTitle = this.headLineCreator("Download Bereich");
+      downloadCV = this.downloadButtonCreator(cv, "Lebenslauf");
+      downloadQC = this.downloadButtonCreator(
+        qc,
+        "Qualifikationen und Zertifikate"
+      );
+    } else {
+      downloadTitle = this.headLineCreator("Download area");
+      downloadCV = this.downloadButtonCreator(cv, "Curriculum Vitae");
+      downloadQC = this.downloadButtonCreator(
+        qc,
+        "Qualifikations and Certifications"
+      );
     }
-  });
-
-  return (
-    <>
-      <h2 data-aos="slide-right" className="download-title"></h2>
-      <section className="download-area flex-container-column">
-        <Button
-          data-aos="zoom-in-right"
-          variant="dark"
-          className="download-qq"
-          href={qq}
-          download
-        >
-          <FontAwesomeIcon className="fa-fw" icon={faDownload} />
-        </Button>
-        <Button
-          data-aos="zoom-in-left"
-          variant="dark"
-          className="download-cv"
-          href={cv}
-          download
-        >
-          <FontAwesomeIcon className="fa-fw" icon={faDownload} />
-        </Button>
-      </section>
-    </>
-  );
-};
+    return (
+      <>
+        {downloadTitle}
+        <section className="download-area flex-container-column">
+          {downloadQC}
+          {downloadCV}
+        </section>
+      </>
+    );
+  }
+}
 
 export default DownloadArea;

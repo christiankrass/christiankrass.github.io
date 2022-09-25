@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.4b098374.css",
-    "main.js": "/react-gh-pages/static/js/main.f8073cf9.js",
+    "main.css": "/react-gh-pages/static/css/main.64cd684d.css",
+    "main.js": "/react-gh-pages/static/js/main.76242e4f.js",
     "static/js/787.28cb0dcd.chunk.js": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js",
+    "static/media/background1.png": "/react-gh-pages/static/media/background1.8a7edd68d594c280e846.png",
     "static/media/C&Q.pdf": "/react-gh-pages/static/media/C&Q.200e49f6eb0af0d9cb09.pdf",
-    "static/media/background1.jpg": "/react-gh-pages/static/media/background1.cdd883053f1620dcca00.jpg",
+    "static/media/background2.png": "/react-gh-pages/static/media/background2.a5f3922d1c3a9a30e31e.png",
+    "static/media/25+5Clock.png": "/react-gh-pages/static/media/25+5Clock.516b9cbe42ba2ab3f24e.png",
     "static/media/MarkdownPreviewer.png": "/react-gh-pages/static/media/MarkdownPreviewer.b6abdb5a3b7cb7b09f28.png",
-    "static/media/background2.jpg": "/react-gh-pages/static/media/background2.7659109d053b5c7d38ee.jpg",
     "static/media/Tribute-Page.png": "/react-gh-pages/static/media/Tribute-Page.362afacae41e6425c6f1.png",
     "static/media/Praktikum.jpeg": "/react-gh-pages/static/media/Praktikum.b29929eb15c323a34bc4.jpeg",
-    "static/media/25+5Clock.png": "/react-gh-pages/static/media/25+5Clock.31dfb1a29b5d5f9956b3.png",
     "static/media/Softwarepro1.jpeg": "/react-gh-pages/static/media/Softwarepro1.4241abaeac2ade0ace4c.jpeg",
     "static/media/QuoteMachine.png": "/react-gh-pages/static/media/QuoteMachine.008915a6438d6cf11df8.png",
     "static/media/SAP.jpeg": "/react-gh-pages/static/media/SAP.6c7b989c003d36c4860b.jpeg",
@@ -23,12 +23,12 @@
     "static/media/Responsive-Design.png": "/react-gh-pages/static/media/Responsive-Design.9be813429b4988b6ba7d.png",
     "static/media/SoftwareproIMG1.png": "/react-gh-pages/static/media/SoftwareproIMG1.ca0172350d98c6163a9f.png",
     "index.html": "/react-gh-pages/index.html",
-    "main.4b098374.css.map": "/react-gh-pages/static/css/main.4b098374.css.map",
-    "main.f8073cf9.js.map": "/react-gh-pages/static/js/main.f8073cf9.js.map",
+    "main.64cd684d.css.map": "/react-gh-pages/static/css/main.64cd684d.css.map",
+    "main.76242e4f.js.map": "/react-gh-pages/static/js/main.76242e4f.js.map",
     "787.28cb0dcd.chunk.js.map": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b098374.css",
-    "static/js/main.f8073cf9.js"
+    "static/css/main.64cd684d.css",
+    "static/js/main.76242e4f.js"
   ]
 }

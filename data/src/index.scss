@@ -144,13 +144,6 @@ hr {
     border-top-right-radius: 350px;
     z-index: -2;
   }
-  .trans {
-    @include absolutePosZero;
-    bottom: 15px;
-    height: 35vh;
-    background: linear-gradient(transparent, var(--background-color));
-    z-index: -1;
-  }
 }
 
 /* Headlines */
@@ -170,7 +163,7 @@ h1 {
 #main * > h3 {
   text-align: center;
   margin: 25px auto;
-  font-size: 1.5vw;
+  font-size: 2vw;
 }
 
 #main > .cv-container > .cv > h3 {

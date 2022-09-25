@@ -1,98 +1,104 @@
-import $ from "jquery";
 import React from "react";
 import simpleParallax from "simple-parallax-js";
-import background1 from "./media/img/background1.jpg";
-import background2 from "./media/img/background2.jpg";
+import background1 from "./media/img/background1.png";
+import background2 from "./media/img/background2.png";
 import ukflag from "./media/img/united-kingdom.png";
 import gerflg from "./media/img/germany.png";
 
-class Welcome extends React.Component {
+export default class Welcome extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      welcomeHeadline: "",
-    };
     this.setLanguage = this.setLanguage.bind(this);
   }
 
   componentDidMount() {
-    if (this.props.language === "de") {
-      this.setState({
-        welcomeHeadline: "Willkommen",
-      });
-      $(".welcome-title").css({ fontSize: "16vw" });
-      $(".active-deu").css({ border: "2px solid white" });
-      $(".active-eng").css({ border: "" });
-      $(".background-img").attr({ src: background2 });
-    } else {
-      this.setState({
-        welcomeHeadline: "Welcome",
-      });
-      $(".welcome-title").css({ fontSize: "" });
-      $(".active-eng").css({ border: "2px solid white" });
-      $(".active-deu").css({ border: "" });
-      $(".background-img").attr({ src: background1 });
-    }
-
     var background = document.getElementsByClassName("background-img");
     new simpleParallax(background, {
       overflow: true,
       delay: 1,
-      maxTransition: 65,
-      customWrapper: ".backgroundcontainer",
-    });
-
-    var tranparentLayer = document.getElementsByClassName("trans");
-    new simpleParallax(tranparentLayer, {
-      overflow: true,
-      delay: 1,
-      maxTransition: 65,
       customWrapper: ".backgroundcontainer",
     });
   }
 
   setLanguage(event) {
-    if (event.currentTarget.className.split(" ")[0] === "uk-button") {
+    if (event.target.alt === "en") {
       this.props.setLang("en");
       sessionStorage.setItem("language", "en");
-      this.setState({
-        welcomeHeadline: "Welcome",
-      });
-      $(".welcome-title").css({ fontSize: "" });
-      $(".active-eng").css({ border: "2px solid white" });
-      $(".active-deu").css({ border: "" });
-      $(".background-img").attr({ src: background1 });
-    } else if (event.currentTarget.className.split(" ")[0] === "ger-button") {
+    } else if (event.target.alt === "de") {
       this.props.setLang("de");
       sessionStorage.setItem("language", "de");
-      this.setState({
-        welcomeHeadline: "Willkommen",
-      });
-      $(".welcome-title").css({ fontSize: "16vw" });
-      $(".active-deu").css({ border: "2px solid white" });
-      $(".active-eng").css({ border: "" });
-      $(".background-img").attr({ src: background2 });
     }
   }
 
+  setActiveButton = (buttonLanguage, currentSiteLanguage) => {
+    let src = "";
+    let style = "";
+    if (buttonLanguage === "de") {
+      src = gerflg;
+    } else {
+      src = ukflag;
+    }
+    if (buttonLanguage === currentSiteLanguage) {
+      style = { border: "2px solid white" };
+    } else {
+      style = { border: "initial" };
+    }
+    return (
+      <img
+        className={"active-" + buttonLanguage + " hover-pointer"}
+        src={src}
+        alt={buttonLanguage}
+        // eslint-disable-next-line react/style-prop-object
+        style={style}
+      />
+    );
+  };
+
   render() {
+    let backgroundImg = "";
+    let welcomeTitle = "";
+    let engButton = "";
+    let gerButton = "";
+    if (this.props.language === "de") {
+      engButton = this.setActiveButton("en", this.props.language);
+      gerButton = this.setActiveButton("de", this.props.language);
+      backgroundImg = (
+        <img className="background-img" alt="BackgroundImg" src={background2} />
+      );
+      welcomeTitle = (
+        <h1 className="welcome-title" style={{ fontSize: "16vw" }}>
+          Willkommen
+        </h1>
+      );
+    } else {
+      engButton = this.setActiveButton("en", this.props.language);
+      gerButton = this.setActiveButton("de", this.props.language);
+      backgroundImg = (
+        <img className="background-img" alt="BackgroundImg" src={background1} />
+      );
+      welcomeTitle = (
+        <h1 className="welcome-title" style={{ fontSize: "23vw" }}>
+          Welcome
+        </h1>
+      );
+    }
+
     return (
       <>
         <div className="language">
-          <button className="uk-button lang-button" onClick={this.setLanguage}>
-            <img className="active-eng hover-pointer" src={ukflag} alt="EN" />
+          <button className="lang-button" onClick={this.setLanguage}>
+            {engButton}
           </button>
-          <button className="ger-button lang-button" onClick={this.setLanguage}>
-            <img className="active-deu hover-pointer" src={gerflg} alt="DE" />
+          <button className="lang-button" onClick={this.setLanguage}>
+            {gerButton}
           </button>
         </div>
         <header
           id="welcome-section"
           className="backgroundcontainer flex-container-row"
         >
-          <div className="trans"></div>
-          <img className="background-img" alt="BackgroundImg" />
-          <h1 className="welcome-title">{this.state.welcomeHeadline}</h1>
+          {backgroundImg}
+          {welcomeTitle}
         </header>
         <section id="animation">
           <div id="scroll-animation" className="scroll-sector-1"></div>
@@ -103,5 +109,3 @@ class Welcome extends React.Component {
     );
   }
 }
-
-export default Welcome;

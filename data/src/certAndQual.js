@@ -11,117 +11,94 @@ import SWP2 from "./media/img/Softwarepro1.jpeg";
 import SWP1 from "./media/img/Softwarepro2.jpeg";
 import Intership from "./media/img/Praktikum.jpeg";
 
-class CaQ extends React.Component {
+export default class CaQ extends React.Component {
+  carouselItemCreater(pictureImgSrc, title, urlToProject) {
+    return (
+      <Carousel.Item key={title}>
+        <Image
+          className="1-Car-1-Pic car-img"
+          src={pictureImgSrc}
+          alt={title}
+          fluid="true"
+        />
+        {urlToProject !== null ? (
+          <Carousel.Caption>
+            <Button
+              className="btn-car"
+              variant="secondary"
+              href={urlToProject}
+              target="_blank"
+              rel="noreferrer"
+              value={title}
+            >
+              {this.props.language === "de"
+                ? "Weitere Information"
+                : "Further Information"}
+            </Button>
+          </Carousel.Caption>
+        ) : (
+          <></>
+        )}
+      </Carousel.Item>
+    );
+  }
+
   render() {
     let headLine = "";
     if (this.props.language === "de") {
       headLine = (
         <h2 data-aos="zoom-in" className="c-and-q-title">
-          Zertifikat
+          Zertifikate
         </h2>
       );
     } else {
       headLine = (
         <h2 data-aos="zoom-in" className="c-and-q-title">
-          Certificate
+          Certificates
         </h2>
       );
     }
+
+    let certification = [
+      this.carouselItemCreater(
+        FrontEnd,
+        "Front End Certification",
+        "https://www.freecodecamp.org/certification/christiankrass/front-end-development-libraries"
+      ),
+      this.carouselItemCreater(
+        JADS,
+        "Javascript algorithms and data structures Certification",
+        "https://www.freecodecamp.org/certification/christiankrass/javascript-algorithms-and-data-structures"
+      ),
+      this.carouselItemCreater(
+        Responsive,
+        "Responsive web design Certification",
+        "https://www.freecodecamp.org/certification/christiankrass/responsive-web-design"
+      ),
+      this.carouselItemCreater(SAP, "PROBAS SAP Workshop", null),
+      this.carouselItemCreater(
+        SWP1,
+        "Softwareproject TU Ilmenau Presentationalsystem",
+        null
+      ),
+      this.carouselItemCreater(
+        SWP2,
+        "Softwareproject School Application",
+        null
+      ),
+      this.carouselItemCreater(Intership, "Intership Highschool", null),
+    ];
 
     return (
       <>
         {headLine}
         <Carousel data-aos="slide-up" id="carousel" pause="hover">
-          <Carousel.Item>
-            <Image
-              className="1-Car-1-Pic car-img"
-              src={FrontEnd}
-              alt="Tribute Page"
-              fluid="true"
-            />
-            <Carousel.Caption>
-              <Button
-                className="btn-car"
-                variant="secondary"
-                href="https://www.freecodecamp.org/certification/christiankrass/front-end-development-libraries"
-                target="_blank"
-                rel="noreferrer"
-                value="Tribute Page"
-              ></Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <Image
-              className="1-Car-2-Pic car-img"
-              src={JADS}
-              alt="Technical Page"
-              fluid="true"
-            />
-            <Carousel.Caption>
-              <Button
-                className="btn-car"
-                variant="secondary"
-                href="https://www.freecodecamp.org/certification/christiankrass/javascript-algorithms-and-data-structures"
-                target="_blank"
-                rel="noreferrer"
-                alt="Technical Page"
-              ></Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <Image
-              className="1-Car-1-Pic car-img"
-              src={Responsive}
-              alt="Tribute Page"
-              fluid="true"
-            />
-            <Carousel.Caption>
-              <Button
-                className="btn-car"
-                variant="secondary"
-                href="https://www.freecodecamp.org/certification/christiankrass/responsive-web-design"
-                target="_blank"
-                rel="noreferrer"
-                value="Tribute Page"
-              ></Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <Image
-              className="1-Car-1-Pic car-img"
-              src={SAP}
-              alt="Tribute Page"
-              fluid="true"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <Image
-              className="1-Car-1-Pic car-img"
-              src={SWP1}
-              alt="Tribute Page"
-              fluid="true"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <Image
-              className="1-Car-1-Pic car-img"
-              src={SWP2}
-              alt="Tribute Page"
-              fluid="true"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <Image
-              className="1-Car-1-Pic car-img"
-              src={Intership}
-              alt="Tribute Page"
-              fluid="true"
-            />
-          </Carousel.Item>
+          {certification.map((obj) => {
+            return obj;
+          })}
         </Carousel>
+        <hr></hr>
       </>
     );
   }
 }
-
-export default CaQ;

@@ -16,11 +16,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
 AOS.init();
+
 let language = "";
 if (sessionStorage.getItem("language") == null) {
   language =
     navigator.language.split("-")[0] || navigator.userLanguage.split("-")[0];
-  sessionStorage.setItem("language", language);
+  //Check if the language is english or german -> else it will default to english
+  if (language === "de" || language === "en") {
+    sessionStorage.setItem("language", language);
+  } else {
+    sessionStorage.setItem("language", "en");
+  }
 } else {
   language = sessionStorage.getItem("language");
 }
@@ -32,18 +38,21 @@ const LANG = "CHANGELANGUAGE";
 const setLanguage = createAction(LANG);
 
 //Configurate Reducer
-const langReducer = createReducer({ langState: language }, (builder) => {
-  builder
-    .addCase(LANG, (state, action) => {
-      state.langState = action.payload;
-    })
-    .addDefaultCase((state) => {
-      state.langState = language;
-    });
-});
+const languageReducer = createReducer(
+  { languageState: language },
+  (builder) => {
+    builder
+      .addCase(LANG, (state, action) => {
+        state.languageState = action.payload;
+      })
+      .addDefaultCase((state) => {
+        state.languageState = language;
+      });
+  }
+);
 
 //Configurate Reducer Combiner
-const reducer = { getLanguage: langReducer };
+const reducer = { languageReducer: languageReducer };
 
 //Configurate Store for Redux
 const store = configureStore({
@@ -54,7 +63,7 @@ const store = configureStore({
 //function for using States inside React
 const mapStateToProps = (state) => {
   return {
-    language: state.getLanguage.langState,
+    language: state.languageReducer.languageState,
   };
 };
 
@@ -86,15 +95,10 @@ root.render(
       <main id="main">
         <WelcomeWithPropsAndDispatch />
         <TitleWithProps />
-        <hr></hr>
         <ProjectsWithProps />
-        <hr></hr>
         <CVWithProps />
-        <hr></hr>
         <CaQWithProps />
-        <hr></hr>
         <DownloadAreaWithProps />
-        <hr></hr>
         <FooterWithProps />
       </main>
     </React.StrictMode>

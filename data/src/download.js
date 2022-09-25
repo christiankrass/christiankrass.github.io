@@ -5,7 +5,7 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import qc from "./media/documents/C&Q.pdf";
 import cv from "./media/documents/CV.pdf";
 
-class DownloadArea extends React.Component {
+export default class DownloadArea extends React.Component {
   headLineCreator(headlineText) {
     return (
       <h2 data-aos="slide-right" className="download-title">
@@ -54,9 +54,8 @@ class DownloadArea extends React.Component {
           {downloadQC}
           {downloadCV}
         </section>
+        <hr></hr>
       </>
     );
   }
 }
-
-export default DownloadArea;

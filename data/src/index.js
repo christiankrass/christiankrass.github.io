@@ -93,6 +93,13 @@ root.render(
   <Provider store={store}>
     <React.StrictMode>
       <main id="main">
+        <div
+          className="topDiv"
+          style={{
+            width: "100vw",
+            position: "fixed",
+          }}
+        ></div>
         <WelcomeWithPropsAndDispatch />
         <TitleWithProps />
         <ProjectsWithProps />

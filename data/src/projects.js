@@ -16,7 +16,7 @@ export default class Projects extends React.Component {
     return (
       <Carousel.Item key={title}>
         <Image
-          className="1-Car-1-Pic car-img"
+          className="car-img"
           src={pictureImgSrc}
           alt={title}
           fluid="true"

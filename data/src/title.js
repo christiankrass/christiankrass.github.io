@@ -14,51 +14,56 @@ let timerLength = 0;
 let timerIndex = 0;
 
 //Dynamic Output fixed setter
-let topNav = document.getElementsByClassName("topDiv");
-let el = document.getElementsByClassName("introtext");
-let backupITPostion = "";
+let topDiv = document.getElementsByClassName("topDiv");
+let introtext = document.getElementsByClassName("introtext");
+let backupIntroTextPostion = "";
 let innerDocumentHeight = "";
-let backupDif = "";
-
-// RT Output Settings
-let pauseBetweenWriteAndDelete = 45;
-let writeSpeed = 40;
-let deleteSpeed = 25;
+let backupDifferenceBetweenIntroAndTopDocument = "";
 
 let gerText = TitleText.prototype.getGermanText();
 let engText = TitleText.prototype.getEnglishText();
 
+//Settings which can be changed!
+// RT Output Settings
+let pauseBetweenWriteAndDelete = 45;
+let writeSpeed = 40;
+let deleteSpeed = 25;
+// Gap Dynamic Title Settings
+let dynmaicTitleGap = 25;
+
 window.onload = (event) => {
-  backupITPostion = el[0].offsetTop;
+  backupIntroTextPostion = introtext[0].offsetTop;
   innerDocumentHeight = event.currentTarget.innerHeight;
 };
 
 window.onresize = (event) => {
-  if (el[0].offsetTop > 0) {
+  if (introtext[0].offsetTop > 0) {
     innerDocumentHeight = event.currentTarget.innerHeight;
-    backupITPostion = el[0].offsetTop + topNav[0].offsetHeight;
+    backupIntroTextPostion = introtext[0].offsetTop - dynmaicTitleGap;
   }
 };
 
 window.onscroll = function () {
-  if (backupITPostion - innerDocumentHeight > 0)
-    backupDif = backupITPostion - innerDocumentHeight;
+  if (backupIntroTextPostion - innerDocumentHeight > 0)
+    backupDifferenceBetweenIntroAndTopDocument =
+      backupIntroTextPostion - innerDocumentHeight;
 
-  if (backupITPostion - innerDocumentHeight < 0) {
-    backupITPostion = innerDocumentHeight + backupDif;
+  if (backupIntroTextPostion - innerDocumentHeight < 0) {
+    backupIntroTextPostion =
+      innerDocumentHeight + backupDifferenceBetweenIntroAndTopDocument;
   }
 
   if (
-    document.documentElement.scrollTop + topNav[0].offsetHeight >
-    backupITPostion
+    document.documentElement.scrollTop + topDiv[0].offsetHeight >
+    backupIntroTextPostion
   ) {
     $(".introtext").css({ position: "fixed" });
   }
 
-  if (document.documentElement.scrollTop < backupITPostion) {
+  if (document.documentElement.scrollTop < backupIntroTextPostion) {
     $(".introtext").css({
       position: "relative",
-      top: "25px",
+      top: dynmaicTitleGap + "px",
       right: "0px",
       left: "0px",
     });

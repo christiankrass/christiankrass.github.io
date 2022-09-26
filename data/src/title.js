@@ -13,7 +13,6 @@ let realTimeTextOutput = "";
 let timerLength = 0;
 let timerIndex = 0;
 
-let topDiv = document.getElementsByClassName("topDiv");
 let introtext = document.getElementsByClassName("introtext");
 
 //Dynamic Output fixed setter
@@ -92,15 +91,14 @@ window.onscroll = function () {
     backupIntroTextPostion =
       innerDocumentHeight + backupDifferenceBetweenIntroAndTopDocument;
   }
-
   if (
-    document.documentElement.scrollTop + topDiv[0].offsetHeight >
+    document.documentElement.scrollTop + dynmaicTitleGap >
     backupIntroTextPostion
   ) {
-    $(".introtext").css({ position: "fixed" });
-  }
-
-  if (document.documentElement.scrollTop < backupIntroTextPostion) {
+    $(".introtext").css({
+      position: "fixed",
+    });
+  } else {
     $(".introtext").css({
       position: "initial",
       top: dynmaicTitleGap + "px",

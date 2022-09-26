@@ -16,7 +16,12 @@ export default class Welcome extends React.Component {
     new simpleParallax(background, {
       overflow: true,
       delay: 1,
-      customWrapper: ".backgroundcontainer",
+    });
+
+    var transparentLayer = document.getElementsByClassName("transparentLayer");
+    new simpleParallax(transparentLayer, {
+      overflow: true,
+      delay: 1,
     });
   }
 
@@ -97,6 +102,7 @@ export default class Welcome extends React.Component {
           id="welcome-section"
           className="backgroundcontainer flex-container-row"
         >
+          <div className="transparentLayer"></div>
           {backgroundImg}
           {welcomeTitle}
         </header>

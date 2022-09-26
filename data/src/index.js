@@ -98,6 +98,7 @@ root.render(
           style={{
             width: "100vw",
             position: "fixed",
+            zIndex: "-5",
           }}
         ></div>
         <WelcomeWithPropsAndDispatch />

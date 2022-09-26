@@ -13,15 +13,26 @@ let realTimeTextOutput = "";
 let timerLength = 0;
 let timerIndex = 0;
 
-//Dynamic Output fixed setter
 let topDiv = document.getElementsByClassName("topDiv");
 let introtext = document.getElementsByClassName("introtext");
+
+//Dynamic Output fixed setter
 let backupIntroTextPostion = "";
 let innerDocumentHeight = "";
 let backupDifferenceBetweenIntroAndTopDocument = "";
 
 let gerText = TitleText.prototype.getGermanText();
 let engText = TitleText.prototype.getEnglishText();
+
+//Browser Check
+const userAgent = navigator.userAgent;
+let isChromium = window.chrome;
+let winNav = window.navigator;
+let vendorName = winNav.vendor;
+let isOpera = typeof window.opr !== "undefined";
+let isIEedge = winNav.userAgent.indexOf("Edg") > -1;
+let isIOSChrome = winNav.userAgent.match("CriOS");
+let isChromeOnMobile = false;
 
 //Settings which can be changed!
 // RT Output Settings
@@ -31,9 +42,38 @@ let deleteSpeed = 25;
 // Gap Dynamic Title Settings
 let dynmaicTitleGap = 25;
 
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(
+    userAgent
+  )
+) {
+  isChromeOnMobile = true;
+}
+
 window.onload = (event) => {
-  backupIntroTextPostion = introtext[0].offsetTop;
-  innerDocumentHeight = event.currentTarget.innerHeight;
+  if (isIOSChrome || isChromeOnMobile) {
+    //Chrome on IOS or Android
+    setTimeout(() => {
+      backupIntroTextPostion = introtext[0].offsetTop;
+      innerDocumentHeight = event.currentTarget.innerHeight;
+    }, 100);
+  } else if (
+    isChromium !== null &&
+    typeof isChromium !== "undefined" &&
+    vendorName === "Google Inc." &&
+    isOpera === false &&
+    isIEedge === false
+  ) {
+    //Chrome on Desktop
+    backupIntroTextPostion = introtext[0].offsetTop;
+    innerDocumentHeight = event.currentTarget.innerHeight;
+  } else {
+    //Not Chrome
+    setTimeout(() => {
+      backupIntroTextPostion = introtext[0].offsetTop;
+      innerDocumentHeight = event.currentTarget.innerHeight;
+    }, 100);
+  }
 };
 
 window.onresize = (event) => {
@@ -62,7 +102,7 @@ window.onscroll = function () {
 
   if (document.documentElement.scrollTop < backupIntroTextPostion) {
     $(".introtext").css({
-      position: "relative",
+      position: "initial",
       top: dynmaicTitleGap + "px",
       right: "0px",
       left: "0px",
@@ -161,7 +201,7 @@ export default class Title extends React.Component {
       <>
         {headLine}
         <br />
-        <section className="introtext">
+        <div className="introtext">
           <FontAwesomeIcon
             icon={faRotateRight}
             className="refreshBtn"
@@ -170,7 +210,7 @@ export default class Title extends React.Component {
             onClick={this.reset}
           />
           <p className="dynamic-title"></p>
-        </section>
+        </div>
         <hr></hr>
       </>
     );

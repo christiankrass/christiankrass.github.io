@@ -240,10 +240,9 @@ h1 {
   .introtext {
     border: 2px solid var(--text-color);
     display: block;
+    position: static;
     border-radius: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: justify;
+    padding: 0 15px 0 15px;
     margin: 0 auto 55px auto;
     width: 80vw;
     font-size: 18px;

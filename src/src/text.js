@@ -9,24 +9,24 @@ let titleTextGerman = [
   "Hallo.",
   "Mein Name ist Christian Krass.",
   "Ich bin ein ambitionierter Webentwickler.",
-  "Als Hauptkomponente wurde React verwendet.",
-  "Globales State Management wurde mit Hilfe von Redux Toolkit und React-Redux realisiert.",
-  "In der stilistischen Gestaltung wurden Material UI, Bootstrap, simpleParallax, Font Awesome und die AOS Library verwendet.",
+  "Für dieses Projekt wurde React als Hauptkomponente verwendet.",
+  "Das Globales State Management wurde mit Hilfe von Redux Toolkit und React-Redux realisiert.",
+  "Für die stilistische Gestaltung wurden Material UI, Bootstrap, simpleParallax, Font Awesome und die AOS Library verwendet.",
   "CSS wurde mit Hilfe des SASS-Präprozessors erweitert.",
   "Wenn ich Sie neugierig gemacht habe, können Sie mich gerne kontaktieren.",
   "Meine E-Mail-Adresse und Telefonnummer finden Sie im Lebenslauf unter Persönliche Informationen.",
-  "Vielen Dank, dass Sie sich die Zeit genommen haben, mein Portfolio zu besuchen, und ich freue mich, bald von Ihnen zu hören.",
+  "Ich danke Ihnen, dass Sie sich die Zeit genommen haben, mein Portfolio zu besuchen und freue mich, bald von Ihnen zu hören",
 ];
 let titleTextEnglish = [
   "Hello.",
   "My name is Christian Krass.",
   "I am an ambitious web developer.",
   "For this project, React was used as the main component.",
-  "Global State Management was realised with the help of Redux Toolkit and React-Redux.",
+  "Global state management was implemented using Redux Toolkit and React-Redux.",
   "Material UI, Bootstrap, simpleParallax, Font Awesome and the AOS Library were used in the stylistic design.",
   "CSS was extended with the help of the SASS preprocessor.",
   "If I have made you curious, please feel free to contact me.",
-  "You can find my email and phone number in the CV under Personal Information.",
+  "My email address and phone number can be found in the CV under Personal Information.",
   "Thank you for taking the time to visit my portfolio and I look forward to hearing from you soon.",
 ];
 
@@ -92,33 +92,36 @@ const otherSkills = [
   <CircularProgressWithLabel value={20} name={"SQL"} />,
 ];
 
-const email = (
-  <p>
-    <a
-      href="mailto:christiankrass@web.de"
-      style={{ color: "orange", textDecoration: "none" }}
-    >
-      christiankrass@web.de
-    </a>
-  </p>
-);
-
-export class CVTextGerman extends React.Component {
+export class CVText extends React.Component {
   render() {
+    const language = this.props.language;
+
+    const Certificate = (
+      <p>
+        {language === "de"
+          ? "Abschluss: Zertifikat"
+          : "Graduation: Certificate"}
+      </p>
+    );
     return (
       <>
         <h2 data-aos="fade-down" className="cv-title">
-          Lebenslauf
+          {language === "de" ? "Lebenslauf" : "Curriculum Vitae"}
         </h2>
         <section className="cv-container">
           <div data-aos="zoom-in-right" className="cv cv-place1">
-            <h3>Persönliche Informationen </h3>
+            <h3>
+              {language === "de"
+                ? "Persönliche Informationen"
+                : "Personal Information"}
+            </h3>
             <hr />
             <div className="placer">
               Name: <p>Christian Krass</p>
             </div>
             <div className="placer">
-              Adresse: <p>Ziolkowskistraße 29</p>
+              {language === "de" ? "Adresse: " : "Address:"}
+              <p>Ziolkowskistraße 29</p>
               <br />
               <p>98693 Ilmenau</p>
             </div>
@@ -126,91 +129,205 @@ export class CVTextGerman extends React.Component {
             <div className="placer">
               Mobile:<p>0173/6231657</p>
             </div>
-            <div className="placer">Email: {email}</div>
             <div className="placer">
-              Geburtsdatum: <p>19.03.1993</p>
+              Email:
+              <p>
+                <a
+                  href="mailto:christiankrass@web.de"
+                  style={{ color: "orange", textDecoration: "none" }}
+                >
+                  christiankrass@web.de
+                </a>
+              </p>
             </div>
             <div className="placer">
-              Staatsangehörigkeit: <p>Deutsch</p>
+              {language === "de" ? "Geburtsdatum" : "Birthdate"}:
+              <p>19.03.1993</p>
+            </div>
+            <div className="placer">
+              {language === "de" ? "Staatsangehörigkeit" : "Citizenship"}:
+              <p>Deutsch</p>
             </div>
             <br />
-            <h3>Erfahrung in der Webentwicklung</h3>
+            <h3>
+              {language === "de"
+                ? "Erfahrung in der Webentwicklung"
+                : "Web Development Experience"}
+            </h3>
             <hr />
-            <h4>Seit September 2022</h4>
+            <h4>
+              {language === "de"
+                ? "Seit September 2022"
+                : "Since September 2022"}
+            </h4>
             <p>freeCodeCamp</p>
-            <p>Datenvisualisierung</p>
+            <p>
+              {language === "de" ? "Datenvisualisierung" : "Data Visualization"}
+            </p>
             <p>D3, JSON, AJAX</p>
             <hr />
             <h4>August 2022 - September 2022</h4>
             <p>freeCodeCamp</p>
-            <p>Front-End-Entwicklungsbibliotheken</p>
+            <p>
+              {language === "de"
+                ? "Front-End-Entwicklungsbibliotheken"
+                : "Front End Development Libraries"}
+            </p>
             <p>Bootstrap, jQuery, React, Redux</p>
-            <p>Abschluss: Zertifikat</p>
+            {Certificate}
             <hr />
-            <h4>Juni 2022 - August 2022</h4>
+            <h4>
+              {language === "de"
+                ? "Juni 2022 - August 2022"
+                : "June 2022 - August 2022"}
+            </h4>
             <p> freeCodeCamp</p>
-            <p>JavaScript Algorithmen und Datenstrukturen</p>
-            <p>Abschluss: Zertifikat</p>
+            <p>
+              {language === "de"
+                ? "JavaScript Algorithmen und Datenstrukturen"
+                : "JavaScript Algorithms and Data Structures"}
+            </p>
+            {Certificate}
             <hr />
-            <h4>Mai 2022 - Juni 2022</h4>
-            <p> freeCodeCamp</p>
+            <h4>
+              {language === "de"
+                ? "Mai 2022 - Juni 2022"
+                : "May 2022 - June 2022"}
+            </h4>
+            <p>freeCodeCamp</p>
             <p>Responsive Web Design</p>
-            <p>Abschluss: Zertifikat</p>
+            {Certificate}
             <hr />
-            <h4>April 2017 - Juli 2017</h4>
-            <p>Softwareprojekt TU Ilmenau</p>
+            <h4>
+              {language === "de"
+                ? "April 2017 - Juli 2017"
+                : "April 2017 - July 2017"}
+            </h4>
+            <p>
+              {language === "de"
+                ? "Softwareprojekt TU Ilmenau"
+                : "Software project TU Ilmenau"}
+            </p>
             <p>Back-End:</p>
             <ul>
-              <li> Database administration</li>
-              <li> User Log-in</li>
-              <li> Upload + Conversion</li>
+              <li>
+                {language === "de"
+                  ? "Datenbankverwaltung"
+                  : "Database administration"}
+              </li>
+              <li>{language === "de" ? "Nutzer Log-in" : "User Log-in"} </li>
+              <li>
+                Upload + {language === "de" ? "Konvertierung" : "Conversion"}
+              </li>
             </ul>
-            <p>Abschluss: Zertifikat</p>
+            {Certificate}
             <hr />
-            <h4>Juni 2015 - Juli 2015</h4>
-            <p>Schulprojekt für eine Webanwendung</p>
-            <p>Abschluss: Zertifikat</p>
+            <h4>
+              {language === "de"
+                ? "Juni 2015 - Juli 2015"
+                : "June 2015 - July 2015"}
+            </h4>
+            <p>
+              {language === "de"
+                ? "Schulprojekt für eine Webanwendung"
+                : "School project for a web application"}
+            </p>
+            {Certificate}
             <hr />
-            <h4>Juni 2014 - Juli 2014</h4>
-            <p>Praktikum Fachhochschule</p>
-            <p>Elektrotechnik und Informatik</p>
+            <h4>
+              {language === "de"
+                ? "Juni 2014 - Juli 2014"
+                : "June 2014 - July 2014"}
+            </h4>
+            <p>
+              {language === "de"
+                ? "Praktikum Fachhochschule"
+                : "Internship University of Applied Sciences"}
+            </p>
+            <p>
+              {language === "de"
+                ? "Elektrotechnik und Informatik"
+                : "Electrical Engineering and Computer Science"}
+            </p>
             <ul>
-              <li>Vier Gewinnt mit WebRTC</li>
+              <li>
+                {language === "de"
+                  ? "Vier Gewinnt mit WebRTC"
+                  : "Four Wins with WebRTC"}
+              </li>
             </ul>
             <br />
-            <h3>Berufserfahrung</h3>
+            <h3>{language === "de" ? "Berufserfahrung" : "Work experience"}</h3>
             <hr />
-            <h4>Seit August 2019</h4>
-            <p>Teilzeitjob JYSK SE</p>
+            <h4>
+              {language === "de" ? "Seit August 2019" : "Since August 2019"}
+            </h4>
+            <p>
+              {language === "de"
+                ? "Teilzeitjob JYSK SE"
+                : "Part-time job JYSK SE"}
+            </p>
             <ul>
-              <li>Beratung und Verkauf</li>
+              <li>
+                {language === "de"
+                  ? "Beratung und Verkauf"
+                  : "Consultation and sale"}
+              </li>
             </ul>
             <br />
           </div>
           <div data-aos="zoom-in-left" className="cv cv-place2">
-            <h3>Besondere Leistungen</h3>
+            <h3>
+              {language === "de"
+                ? "Besondere Leistungen"
+                : "Special achievements"}
+            </h3>
             <hr />
-            <h4>Oktober 2016 - 2017</h4>
-            <p>SAP-Projektseminar PROBAS</p>
+            <h4>
+              {language === "de"
+                ? "Oktober 2016 - 2017"
+                : "October 2016 - 2017"}
+            </h4>
+            <p>
+              {language === "de"
+                ? "SAP-Projektseminar PROBAS"
+                : "SAP Project Seminar PROBAS"}
+            </p>
             <ul>
               <li> ERP 6.0 + NetWeaver 7.0</li>
             </ul>
-            <p>Abschluss: Zertifikat</p>
+            {Certificate}
             <br />
-            <h3>Kenntnisse</h3>
+            <h3>{language === "de" ? "Kenntnisse" : "Knowledge"}</h3>
             <hr />
-            <h4>Sprachen</h4>
+            <h4>{language === "de" ? "Sprachen" : "Languages"}</h4>
             <hr />
             <ul>
-              <li>Deutsch: Muttersprache</li>
-              <li>Englisch: fließend</li>
-              <li>Russisch: grundlegend</li>
+              <li>
+                {language === "de"
+                  ? "Deutsch: Muttersprache"
+                  : "German: native"}
+              </li>
+              <li>
+                {language === "de" ? "Englisch: fließend" : "English: fluent"}
+              </li>
+              <li>
+                {language === "de" ? "Russisch: grundlegend" : "Russian: basic"}
+              </li>
             </ul>
             <br />
-            <h4>Informations Technologie</h4>
+            <h4>
+              {language === "de"
+                ? "Informationstechnologie"
+                : "Information Technology"}
+            </h4>
             <hr />
             <div className="ITcontainer">
-              <p>Programmier Sprachen:</p>
+              <p>
+                {language === "de"
+                  ? "Programmiersprachen:"
+                  : "Programming languages:"}
+              </p>
               <div className="skillContainer">
                 {programSkill.map((data, index) => {
                   return (
@@ -240,7 +357,7 @@ export class CVTextGerman extends React.Component {
               </div>
               <br />
               <br />
-              <p>Andere Skills:</p>
+              <p>{language === "de" ? "Andere Skills:" : "Other skills:"}</p>
               <div className="skillContainer">
                 {otherSkills.map((data, index) => {
                   return (
@@ -256,222 +373,48 @@ export class CVTextGerman extends React.Component {
               <br />
               <br />
             </div>
-            <p>Andere Software:</p>
+            <p>{language === "de" ? "Andere Software:" : "Other software:"}</p>
             <ul>
               <li>Visual Studio</li>
               <li>GitHub</li>
             </ul>
-            <h3>Ausbildung</h3>
+            <h3>{language === "de" ? "Ausbildung" : "Education"}</h3>
             <hr />
             <h4>2018 - 2021</h4>
             <p>Technische Universität Ilmenau</p>
-            <p>Biotechnische Chemie</p>
-            <p>Ohne Abschluss</p>
+            <p>
+              {language === "de"
+                ? "Biotechnische Chemie"
+                : "Biotechnical chemistry"}
+            </p>
+            <p>{language === "de" ? "Ohne Abschluss" : "Without degree"}</p>
             <hr />
             <h4>2015 - 2018</h4>
             <p>Technische Universität Ilmenau</p>
-            <p>Wirtschaftsinformatik</p>
-            <p>Ohne Abschluss</p>
+            <p>
+              {language === "de"
+                ? "Wirtschaftsinformatik"
+                : "Business Information Systems"}
+            </p>
+            <p>{language === "de" ? "Ohne Abschluss" : "Without degree"}</p>
             <hr />
             <h4>2010 - 2015</h4>
             <p>Hermann-Emanuel-Berufskolleg des Kreises Steinfurt</p>
-            <p>Mathematik und Wirtschaftswissenschaften</p>
-            <p>Abschluss: Abitur</p>
+            <p>
+              {language === "de"
+                ? "Mathematik und Wirtschaftswissenschaften"
+                : "Mathematics and Economics"}
+            </p>
+            <p>
+              {language === "de" ? "Abschluss: Abitur" : "Graduation: A-levels"}
+            </p>
             <br />
-            <h3>Hobbys</h3>
+            <h3>{language === "de" ? "Hobbys" : "Hobbies"}</h3>
             <hr />
             <ul>
               <li>Mountainbiken</li>
               <li>Volleyball</li>
-              <li>Kochen</li>
-            </ul>
-          </div>
-        </section>
-      </>
-    );
-  }
-}
-
-export class CVTextEnglish extends React.Component {
-  render() {
-    return (
-      <>
-        <h2 data-aos="fade-down" className="cv-title">
-          Curriculum Vitae
-        </h2>
-        <section className="cv-container">
-          <div data-aos="zoom-in-right" className="cv cv-place1">
-            <h3>Personal Information</h3>
-            <hr />
-            <div className="placer">
-              Name: <p>Christian Krass</p>
-            </div>
-            <div className="placer">
-              Address: <p>Ziolkowskistraße 29</p> <br />
-              <p>98693 Ilmenau</p>
-            </div>
-            <br />
-            <div className="placer">
-              Mobile: <p>0173/6231657</p>
-            </div>
-            <div className="placer">Email: {email}</div>
-            <div className="placer">
-              Birthdate: <p>19.03.1993</p>
-            </div>
-            <div className="placer">
-              Citizenship: <p>German</p>
-            </div>
-            <br />
-            <h3>Web Development Experience</h3>
-            <hr />
-            <h4>Since September 2022</h4>
-            <p>freeCodeCamp</p>
-            <p>Data Visualization</p>
-            <p>D3, JSON, AJAX</p>
-            <hr />
-            <h4>August 2022 - September 2022</h4>
-            <p>freeCodeCamp</p>
-            <p>Front End Development Libraries</p>
-            <p>Bootstrap, jQuery, React, Redux</p>
-            <p>Graduation: Certificate</p>
-            <hr />
-            <h4>June 2022 - August 2022</h4>
-            <p>freeCodeCamp</p>
-            <p>JavaScript Algorithms and Data Structures</p>
-            <p>Graduation: Certificate</p>
-            <hr />
-            <h4>May 2022 - June 2022</h4>
-            <p>freeCodeCamp</p>
-            <p>Responsive Web Design</p>
-            <p>Graduation: Certificate</p>
-            <hr />
-            <h4>April 2017 - July 2017</h4>
-            <p>Software project TU Ilmenau</p>
-            <p>Back-End:</p>
-            <ul>
-              <li>Database administration</li>
-              <li>User Log-in</li>
-              <li>Upload + Conversion</li>
-            </ul>
-            <p>Graduation: Certificate</p>
-            <hr />
-            <h4>June 2015 - July 2015</h4>
-            <p>School project for an web-application</p>
-            <p>Graduation: Certificate</p>
-            <hr />
-            <h4>June 2014 - July 2014</h4>
-            <p>Internship High school</p>
-            <p>Electrical engineering and computer science</p>
-            <ul>
-              <li>Connect four using WebRTC</li>
-            </ul>
-            <br />
-            <h3>Work experience</h3>
-            <hr />
-            <h4>Since August 2019</h4>
-            <p>Part time job JYSK SE</p>
-            <ul>
-              <li>Consulting and sales</li>
-            </ul>
-            <br />
-          </div>
-          <div data-aos="zoom-in-left" className="cv cv-place2">
-            <h3>Special accomplishments</h3>
-            <hr />
-            <h4>October 2016 - 2017</h4>
-            <p>SAP project seminar PROBAS</p>
-            <ul>
-              <li>ERP 6.0 + NetWeaver 7.0</li>
-            </ul>
-            <p>Graduation: Certificate</p>
-            <br />
-            <h3>Knowledge</h3>
-            <hr />
-            <h4>Languages</h4>
-            <hr />
-            <ul>
-              <li>German: native</li>
-              <li>English: fluent</li>
-              <li>Russian: basic</li>
-            </ul>
-            <br />
-            <h4>Information Technology</h4>
-            <hr />
-            <div className="ITcontainer">
-              <p>Programming skills:</p>
-              <div className="skillContainer">
-                {programSkill.map((data, index) => {
-                  return (
-                    <div
-                      key={index}
-                      style={{ display: "inline", marginLeft: "15px" }}
-                    >
-                      {data}
-                    </div>
-                  );
-                })}
-              </div>
-              <br />
-              <br />
-              <p>JavaScript Frontend Framework Libraries:</p>
-              <div className="skillContainer">
-                {frontEndLibrary.map((data, index) => {
-                  return (
-                    <div
-                      key={index}
-                      style={{ display: "inline", marginLeft: "15px" }}
-                    >
-                      {data}
-                    </div>
-                  );
-                })}
-              </div>
-              <br />
-              <br />
-              <p>Other Skills:</p>
-              <div className="skillContainer">
-                {otherSkills.map((data, index) => {
-                  return (
-                    <div
-                      key={index}
-                      style={{ display: "inline", marginLeft: "15px" }}
-                    >
-                      {data}
-                    </div>
-                  );
-                })}
-              </div>
-              <br />
-              <br />
-            </div>
-            <p>Other Software:</p>
-            <ul>
-              <li>Visual Studio</li>
-              <li>GitHub</li>
-            </ul>
-            <h3>Education</h3>
-            <hr />
-            <h4>2018 - 2021</h4>
-            <p>Technische Universität Ilmenau</p>
-            <p>Biotechnical chemistry</p>
-            <p>Without graduation</p>
-            <hr />
-            <h4>2015 - 2018</h4>
-            <p>Technische Universität Ilmenau</p>
-            <p>Business Information Systems</p>
-            <p>Without graduation</p>
-            <hr />
-            <h4>2010 - 2015</h4>
-            <p>Hermann-Emanuel-Berufskolleg des Kreises Steinfurt</p>
-            <p>Mathematics and computer science</p>
-            <p>Graduation: A-Level</p>
-            <br />
-            <h3>Hobbies</h3>
-            <hr />
-            <ul>
-              <li>Mountain biking</li>
-              <li>Volleyball</li>
-              <li>Cooking</li>
+              <li>{language === "de" ? "Kochen" : "Cooking"}</li>
             </ul>
           </div>
         </section>

@@ -92,6 +92,17 @@ const otherSkills = [
   <CircularProgressWithLabel value={20} name={"SQL"} />,
 ];
 
+const email = (
+  <p>
+    <a
+      href="mailto:christiankrass@web.de"
+      style={{ color: "orange", textDecoration: "none" }}
+    >
+      christiankrass@web.de
+    </a>
+  </p>
+);
+
 export class CVTextGerman extends React.Component {
   render() {
     return (
@@ -115,9 +126,7 @@ export class CVTextGerman extends React.Component {
             <div className="placer">
               Mobile:<p>0173/6231657</p>
             </div>
-            <div className="placer">
-              Email:<p>christiankrass@web.de</p>
-            </div>
+            <div className="placer">Email: {email}</div>
             <div className="placer">
               Geburtsdatum: <p>19.03.1993</p>
             </div>
@@ -305,9 +314,7 @@ export class CVTextEnglish extends React.Component {
             <div className="placer">
               Mobile: <p>0173/6231657</p>
             </div>
-            <div className="placer">
-              Email: <p>christiankrass@web.de</p>
-            </div>
+            <div className="placer">Email: {email}</div>
             <div className="placer">
               Birthdate: <p>19.03.1993</p>
             </div>

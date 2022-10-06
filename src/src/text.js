@@ -74,16 +74,16 @@ function CircularProgressWithLabel(props) {
 }
 
 const programSkill = [
-  <CircularProgressWithLabel value={75} name={"JavaScript"} />,
+  <CircularProgressWithLabel value={70} name={"JavaScript"} />,
   <CircularProgressWithLabel value={40} name={"Java"} />,
   <CircularProgressWithLabel value={20} name={"C#"} />,
 ];
 const frontEndLibrary = [
   <CircularProgressWithLabel value={75} name={"jQuery"} />,
-  <CircularProgressWithLabel value={70} name={"React"} />,
   <CircularProgressWithLabel value={70} name={"Bootstrap"} />,
-  <CircularProgressWithLabel value={40} name={"Redux"} />,
-  <CircularProgressWithLabel value={20} name={"MUI"} />,
+  <CircularProgressWithLabel value={65} name={"React"} />,
+  <CircularProgressWithLabel value={45} name={"Redux"} />,
+  <CircularProgressWithLabel value={15} name={"MUI"} />,
 ];
 const otherSkills = [
   <CircularProgressWithLabel value={80} name={"HTML"} />,
@@ -154,6 +154,13 @@ export class CVText extends React.Component {
                 ? "Erfahrung in der Webentwicklung"
                 : "Web Development Experience"}
             </h3>
+            <hr />
+            <h4>
+              {language === "de" ? "Seit Oktober 2022" : "Since October 2022"}
+            </h4>
+            <p>freeCodeCamp</p>
+            <p>Front-End-Framework</p>
+            <p>Angular, TypeScript</p>
             <hr />
             <h4>
               {language === "de"

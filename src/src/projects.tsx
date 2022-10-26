@@ -11,15 +11,23 @@ import drums from "./media/img/DrumMachine.png";
 import mdp from "./media/img/MarkdownPreviewer.png";
 import quote from "./media/img/QuoteMachine.png";
 
-export default class Projects extends React.Component {
-  carouselItemCreater(pictureImgSrc, title, urlToProject) {
+export default class Projects extends React.Component<
+  { language?: string },
+  {}
+> {
+  carouselItemCreater(
+    pictureImgSrc: string,
+    title: string,
+    urlToProject: string | null
+  ) {
+    const fluid: boolean = true;
     return (
       <Carousel.Item key={title}>
         <Image
           className="car-img"
           src={pictureImgSrc}
           alt={title}
-          fluid="true"
+          fluid={fluid}
         />
         {urlToProject !== null ? (
           <Carousel.Caption>
@@ -44,7 +52,7 @@ export default class Projects extends React.Component {
   }
 
   render() {
-    let projectTitle = "";
+    let projectTitle;
     if (this.props.language === "de") {
       projectTitle = (
         <h2 data-aos="fade-down" className="project-title">

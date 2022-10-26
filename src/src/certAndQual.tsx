@@ -11,15 +11,23 @@ import SWP2 from "./media/img/Softwarepro1.jpeg";
 import SWP1 from "./media/img/Softwarepro2.jpeg";
 import Intership from "./media/img/Praktikum.jpeg";
 
-export default class CaQ extends React.Component {
-  carouselItemCreater(pictureImgSrc, title, urlToProject) {
+export default class CaQ extends React.Component<
+  { language?: string }, //Type for Props
+  {} // Type for States
+> {
+  carouselItemCreater(
+    pictureImgSrc: string,
+    title: string,
+    urlToProject: string | null
+  ) {
+    const fluid: boolean = true;
     return (
       <Carousel.Item key={title}>
         <Image
           className="car-img"
           src={pictureImgSrc}
           alt={title}
-          fluid="true"
+          fluid={fluid}
         />
         {urlToProject !== null ? (
           <Carousel.Caption>
@@ -44,7 +52,7 @@ export default class CaQ extends React.Component {
   }
 
   render() {
-    let headLine = "";
+    let headLine;
     if (this.props.language === "de") {
       headLine = (
         <h2 data-aos="zoom-in" className="c-and-q-title">

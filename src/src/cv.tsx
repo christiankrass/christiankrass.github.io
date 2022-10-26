@@ -1,7 +1,7 @@
 import { CVText } from "./text";
 import React from "react";
 
-export default class CV extends React.Component {
+export default class CV extends React.Component<{ language?: string }, {}> {
   render() {
     return (
       <>

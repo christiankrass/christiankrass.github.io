@@ -5,8 +5,11 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import qc from "./media/documents/C&Q.pdf";
 import cv from "./media/documents/CV.pdf";
 
-export default class DownloadArea extends React.Component {
-  headLineCreator(headlineText) {
+export default class DownloadArea extends React.Component<
+  { language?: string },
+  {}
+> {
+  headLineCreator(headlineText: string) {
     return (
       <h2 data-aos="slide-right" className="download-title">
         {headlineText}
@@ -14,7 +17,7 @@ export default class DownloadArea extends React.Component {
     );
   }
 
-  downloadButtonCreator(href, description) {
+  downloadButtonCreator(href: string, description: string) {
     return (
       <Button
         data-aos="fade"
@@ -29,9 +32,9 @@ export default class DownloadArea extends React.Component {
     );
   }
   render() {
-    let downloadTitle = "";
-    let downloadCV = "";
-    let downloadQC = "";
+    let downloadTitle;
+    let downloadCV;
+    let downloadQC;
     if (this.props.language === "de") {
       downloadTitle = this.headLineCreator("Download Bereich");
       downloadCV = this.downloadButtonCreator(cv, "Lebenslauf");

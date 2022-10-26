@@ -15,7 +15,7 @@ let titleTextGerman = [
   "CSS wurde mit Hilfe des SASS-Präprozessors erweitert.",
   "Wenn ich Sie neugierig gemacht habe, können Sie mich gerne kontaktieren.",
   "Meine E-Mail-Adresse und Telefonnummer finden Sie im Lebenslauf unter Persönliche Informationen.",
-  "Ich danke Ihnen, dass Sie sich die Zeit genommen haben, mein Portfolio zu besuchen und freue mich, bald von Ihnen zu hören",
+  "Ich danke Ihnen, dass Sie sich die Zeit genommen haben, mein Portfolio zu besuchen und freue mich, bald von Ihnen zu hören.",
 ];
 let titleTextEnglish = [
   "Hello.",
@@ -42,7 +42,9 @@ export class TitleText {
 
 //cv.js Settings
 
-function CircularProgressWithLabel(props) {
+export type CPprops = typeof CircularProgressWithLabel.prototype;
+
+function CircularProgressWithLabel(props: CPprops) {
   return (
     <Box
       sx={{
@@ -100,7 +102,7 @@ const otherSkills = [
   <CircularProgressWithLabel value={20} name={"SQL"} />,
 ];
 
-export class CVText extends React.Component {
+export class CVText extends React.Component<{ language?: string }, {}> {
   render() {
     const language = this.props.language;
 

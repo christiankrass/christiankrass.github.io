@@ -6,8 +6,8 @@ import {
   faSquareGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
-export default class Footer extends React.Component {
-  textCreator(language) {
+export default class Footer extends React.Component<{ language?: string }, {}> {
+  textCreator(language?: string) {
     if (language === "de") {
       return "Hier finden Sie den Quellcode für dieses Portfolio";
     } else {

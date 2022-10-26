@@ -4,8 +4,12 @@ import background1 from "./media/img/background1.png";
 import background2 from "./media/img/background2.png";
 import ukflag from "./media/img/united-kingdom.png";
 import gerflg from "./media/img/germany.png";
+import { ActionCreator } from "@reduxjs/toolkit";
 
-export default class Welcome extends React.Component {
+export default class Welcome extends React.Component<
+  { language?: string; setLang: ActionCreator<string> },
+  {}
+> {
   constructor(props) {
     super(props);
     this.setLanguage = this.setLanguage.bind(this);
@@ -26,6 +30,7 @@ export default class Welcome extends React.Component {
   }
 
   setLanguage(event) {
+    console.log(event);
     if (event.target.alt === "en") {
       this.props.setLang("en");
       sessionStorage.setItem("language", "en");
@@ -35,9 +40,12 @@ export default class Welcome extends React.Component {
     }
   }
 
-  setActiveButton = (buttonLanguage, currentSiteLanguage) => {
-    let src = "";
-    let style = "";
+  setActiveButton = (
+    buttonLanguage: string,
+    currentSiteLanguage: string | undefined
+  ) => {
+    let src;
+    let style;
     if (buttonLanguage === "de") {
       src = gerflg;
     } else {
@@ -60,10 +68,10 @@ export default class Welcome extends React.Component {
   };
 
   render() {
-    let backgroundImg = "";
-    let welcomeTitle = "";
-    let engButton = "";
-    let gerButton = "";
+    let backgroundImg;
+    let welcomeTitle;
+    let engButton;
+    let gerButton;
     if (this.props.language === "de") {
       engButton = this.setActiveButton("en", this.props.language);
       gerButton = this.setActiveButton("de", this.props.language);

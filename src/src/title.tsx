@@ -6,29 +6,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 
 //Do not change!
-let globalText = [];
-let preventDouble = true;
-let processDelay = 0;
-let realTimeTextOutput = "";
-let timerLength = 0;
-let timerIndex = 0;
+let globalText: Array<string> = [];
+let preventDouble: boolean = true;
+let processDelay: number = 0;
+let realTimeTextOutput: string = "";
+let timerLength: number = 0;
+let timerIndex: number = 0;
 
-let introtext = document.getElementsByClassName("introtext");
-
+let introtext = document.getElementsByClassName(
+  "introtext"
+) as HTMLCollectionOf<HTMLDivElement>;
 //Dynamic Output fixed setter
-let backupIntroTextPostion = "";
-let innerDocumentHeight = "";
-let backupDifferenceBetweenIntroAndTopDocument = "";
+let backupIntroTextPostion: number = 0;
+let innerDocumentHeight: number = 0;
+let backupDifferenceBetweenIntroAndTopDocument: number = 0;
 
 let gerText = TitleText.prototype.getGermanText();
 let engText = TitleText.prototype.getEnglishText();
 
 //Browser Check
 const userAgent = navigator.userAgent;
-let isChromium = window.chrome;
+// let isChromium = window.chrome;
 let winNav = window.navigator;
-let vendorName = winNav.vendor;
-let isOpera = typeof window.opr !== "undefined";
+// let vendorName = winNav.vendor;
+// let isOpera = typeof window.opr !== "undefined";
 let isIEedge = winNav.userAgent.indexOf("Edg") > -1;
 let isIOSChrome = winNav.userAgent.match("CriOS");
 let isChromeOnMobile = false;
@@ -57,10 +58,10 @@ window.onload = (event) => {
       innerDocumentHeight = event.currentTarget.innerHeight;
     }, 100);
   } else if (
-    isChromium !== null &&
-    typeof isChromium !== "undefined" &&
-    vendorName === "Google Inc." &&
-    isOpera === false &&
+    // isChromium !== null &&
+    // typeof isChromium !== "undefined" &&
+    // vendorName === "Google Inc." &&
+    // isOpera === false &&
     isIEedge === false
   ) {
     //Chrome on Desktop
@@ -111,21 +112,21 @@ window.onscroll = function () {
 const timer = () => {
   processDelay = 0;
   timerLength = globalText[timerIndex].length;
-  setTimeout(() => {
+  window.setTimeout(() => {
     timer();
     for (let i of globalText[timerIndex]) {
       output(i);
     }
     processDelay += pauseBetweenWriteAndDelete + timerLength * 2;
-    // eslint-disable-next-line no-unused-vars
-    for (let i of globalText[timerIndex]) {
+    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+    for (let _i of globalText[timerIndex]) {
       pop();
     }
     if (timerIndex < globalText.length - 1) {
       timerIndex += 1;
     } else {
       //Kill all running Timeouts
-      var killId = setTimeout(function () {
+      var killId: number = window.setTimeout(function () {
         for (var i = killId; i > 0; i--) {
           clearInterval(i);
         }
@@ -142,7 +143,7 @@ const timer = () => {
   }, timerLength * writeSpeed + (pauseBetweenWriteAndDelete + timerLength * 2) * deleteSpeed + timerLength * deleteSpeed);
 };
 
-const output = (value) => {
+const output = (value: string) => {
   processDelay += 1;
   setTimeout(() => {
     realTimeTextOutput += value;
@@ -158,7 +159,7 @@ const pop = () => {
   }, processDelay * deleteSpeed);
 };
 
-export default class Title extends React.Component {
+export default class Title extends React.Component<{ language?: string }, {}> {
   constructor(props) {
     super(props);
     this.reset = this.reset.bind(this);
@@ -187,7 +188,7 @@ export default class Title extends React.Component {
   }
 
   render() {
-    let headLine = "";
+    let headLine;
     if (this.props.language === "de") {
       headLine = <h2 className="introduction-title">Einleitung</h2>;
       globalText = gerText;

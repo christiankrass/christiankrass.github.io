@@ -44,7 +44,13 @@ export class TitleText {
 
 function CircularProgressWithLabel(props) {
   return (
-    <Box sx={{ position: "relative", display: "inline-flex" }}>
+    <Box
+      sx={{
+        position: "relative",
+        display: "inline-flex",
+        margin: "0 5px 0 5px",
+      }}
+    >
       <CircularProgress
         color="inherit"
         variant="determinate"
@@ -75,6 +81,7 @@ function CircularProgressWithLabel(props) {
 
 const programSkill = [
   <CircularProgressWithLabel value={70} name={"JavaScript"} />,
+  <CircularProgressWithLabel value={60} name={"TypeScript"} />,
   <CircularProgressWithLabel value={40} name={"Java"} />,
   <CircularProgressWithLabel value={20} name={"C#"} />,
 ];
@@ -83,6 +90,7 @@ const frontEndLibrary = [
   <CircularProgressWithLabel value={70} name={"Bootstrap"} />,
   <CircularProgressWithLabel value={65} name={"React"} />,
   <CircularProgressWithLabel value={45} name={"Redux"} />,
+  <CircularProgressWithLabel value={35} name={"Angular"} />,
   <CircularProgressWithLabel value={15} name={"MUI"} />,
 ];
 const otherSkills = [

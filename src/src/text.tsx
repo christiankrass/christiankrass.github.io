@@ -50,7 +50,6 @@ function CircularProgressWithLabel(props: CPprops) {
       sx={{
         position: "relative",
         display: "inline-flex",
-        margin: "0 5px 0 5px",
       }}
     >
       <CircularProgress
@@ -350,7 +349,7 @@ export class CVText extends React.Component<{ language?: string }, {}> {
                   return (
                     <div
                       key={index}
-                      style={{ display: "inline", marginLeft: "15px" }}
+                      style={{ display: "inline", margin: "0 25px 0 25px" }}
                     >
                       {data}
                     </div>
@@ -365,7 +364,7 @@ export class CVText extends React.Component<{ language?: string }, {}> {
                   return (
                     <div
                       key={index}
-                      style={{ display: "inline", marginLeft: "15px" }}
+                      style={{ display: "inline", margin: "0 10px 0 10px" }}
                     >
                       {data}
                     </div>
@@ -380,7 +379,7 @@ export class CVText extends React.Component<{ language?: string }, {}> {
                   return (
                     <div
                       key={index}
-                      style={{ display: "inline", marginLeft: "15px" }}
+                      style={{ display: "inline", margin: "0 25px 0 25px" }}
                     >
                       {data}
                     </div>

@@ -142,10 +142,10 @@ export class CVText extends React.Component<{ language?: string }, {}> {
               Email:
               <p>
                 <a
-                  href="mailto:christiankrass@web.de"
+                  href="mailto:christiankrass@mail.com"
                   style={{ color: "orange", textDecoration: "none" }}
                 >
-                  christiankrass@web.de
+                  christiankrass@mail.com
                 </a>
               </p>
             </div>
